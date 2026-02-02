@@ -1,7 +1,7 @@
 @use "../top/vars" as *;
 
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
-@import url('https://discordstyles.github.io/HorizontalServerList/HorizontalServerList.css');
+@import url("https://discordstyles.github.io/HorizontalServerList/HorizontalServerList.css");
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
 
 :root {
@@ -10,7 +10,7 @@
 
     --guildbar-folder-size: var(--guildbar-avatar-size);
     --folder-blob-scale: var(--blob-scale);
-    
+
     --HSL-server-direction: column;
     /* Direct of the server list. | Options: column, column-reverse | DEFAULT: column */
     --HSL-server-alignment: flex-start; /* Alignment of the server list. | OPTIONS: flex-start, center, flex-end | DEFAULT: flex-start */
@@ -19,23 +19,23 @@
     --custom-guild-list-width: 50px !important;
 }
 
-// Channels sidebar
-#app-mount .sidebar__5e434 {
+//Channels sidebar
+#app-mount [class*="sidebar"] {
     border-radius: 8px 8px 0 0;
 }
 
-// Taskbar
-// leave gap in server bar for control panel
-#app-mount .guilds__5e434 {
+//Taskbar
+//leave gap in server bar for control panel
+#app-mount [class*="guilds"] {
     height: calc(100vw - $panel-width) !important;
 
     //Spacing between each server icon
-    .stack_dbd263 {
+    [class*="stack"] {
         gap: 10px !important;
     }
+}
 
-    //Revert weird rotation done by HorizontalServerList
-    .wrapper__6e9f8 {
-        transform: rotate(-90deg)
-    }
+#guild-list-unread-dms > div {
+        width: var(--guildbar-avatar-size) !important;
+        height: var(--guildbar-avatar-size) !important;
 }

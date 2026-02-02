@@ -5,103 +5,163 @@
 @use "../top/shadows" as shd;
 
 //Server list
-.guilds__5e434 {
+[class*="guilds"] {
     --status-danger: #{$color-ping-1};
 
     //Move taskbar to left of screen
-    .tree_ef3116 {
+    [class*="tree"] {
         padding-top: 0px !important;
     }
 
     //Unread indicator - "NEW"
-    .unreadMentionsIndicatorBottom_ef3116,
-    .unreadMentionsIndicatorTop_ef3116 {
+    [class*="unreadMentionsIndicatorBottom"],
+    [class*="unreadMentionsIndicatorTop"] {
         //I'm not sure what Salt was originally meaning to do here,
         //so I completely hid the indicator, as I never knew otherwise
         //and it's a nuisance.
         display: none;
     }
 
-    .scroller_ef3116 {
+    //Server list scroller
+    [class*="scroller"] {
         @include box.barGradient(true, $color-window-1, $color-window-2);
         padding-top: 0px !important;
 
-        // DMs icon / Start button
-        .tutorialContainer__1f388 {
+        //DMs icon / Start button
+        [class*="tutorialContainer"]:nth-of-type(1) {
             @include box.barGradient(true, $color-start-1, $color-start-2);
             position: relative;
             padding: 10px 0 30px 0;
             border-radius: 0 0 100% 100% / 0 0 12px 12px;
 
-            //Discord icon
-            .wrapper_cc5dd2 {
-                transform: rotate(90deg);
+            //Discord icon wrapper (excluding pill)
+            [class*="listItemWrapper"] {
+                width: var(--guildbar-avatar-size);
+                height: var(--guildbar-avatar-size);
 
-                .wrapper__6e9f8 {
-                    .selected__6e9f8,
-                    &:hover {
-                        .childWrapper__6e9f8 {
-                            color: $white;
+                //Discord icon
+                [class*="wrapper"] {
+                    [class*="wrapper"] {
+                        //childWrapper contains Discord icon svg
+
+                        [class*="selected"],
+                        &:hover {
+                            [class*="childWrapper"] {
+                                color: $white;
+                            }
                         }
-                    }
 
-                    .childWrapper__6e9f8 {
-                        color: $white-overlay;
-                        background: transparent;
+                        [class*="childWrapper"] {
+                            color: $white-overlay;
+                            background: transparent;
 
-                        svg {
-                            zoom: 3;
+                            svg {
+                                zoom: 3;
+                            }
                         }
                     }
                 }
             }
         }
 
-        // Unread pill
-        .item__58105 {
+        //All server icons - making the icons circular
+        [class*="listItem"] {
+            //Unread/selected white pill
+            [class*="pill"] {
+                clip-path: none !important;
+            }
+
+            [class*="wrapper"] {
+                width: var(--guildbar-avatar-size) !important;
+                height: var(--guildbar-avatar-size) !important;
+
+                img {
+                    clip-path: circle(50% at 50% 50%);
+                }
+
+                mask {
+                    display: none;
+                }
+            }
+        }
+
+        //Unread pill
+        [class*="item"] {
             background: $white;
         }
 
-        // Folder
-        .folderGroup__48112:not(.isExpanded__48112) {
-            .folderButtonInner__48112 {
-                background: radial-gradient(circle at 12px 12px, $white-folder-overlay, $color-taskbar-1, $color-taskbar-3);
+        //Unread icon
+        [class*="lowerBadge"] {
+            width: var(--guildbar-avatar-size);
+            height: var(--guildbar-avatar-size);
+
+            [class*="numberBadge"] {
+                position: fixed;
+                bottom: -1px;
+                right: -2px;
+            }
+        }
+
+        //Closed folder
+        [class*="folderGroup"]:not([class*="isExpanded"]) {
+            [class*="folderButtonInner"] {
+                background: radial-gradient(
+                    circle at 12px 12px,
+                    $white-folder-overlay,
+                    $color-taskbar-1,
+                    $color-taskbar-3
+                );
             }
         }
 
         //Open folder
-        .folderGroupBackground__48112 {
-            background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
-            width: 25px;
+        [class*="folderGroup"][class*="isExpanded"] {
+            [class*="folderGroupBackground"] {
+                background: linear-gradient(
+                    to bottom,
+                    $color-taskbar-1,
+                    $color-taskbar-2
+                );
+                width: 26px;
+            }
+
+            //Fix folders being too wide due to Discord somehow manually setting width: 
+            [class*="stack"] {
+                height: 100% !important;
+            }
         }
 
-        // Add server and discover servers
-        // Favourite servers
-        .circleIconButton__5bc7e,
-        .childWrapperNoHoverBg__6e9f8 {
-            background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
+        //Add server and discover servers
+        //Favourite servers
+        [class*="circleIconButton"],
+        [class*="childWrapperNoHoverBg"] {
+            background: linear-gradient(
+                to bottom,
+                $color-taskbar-1,
+                $color-taskbar-2
+            );
             color: $white-overlay;
+            clip-path: circle(50% at 50% 50%);
+
+            svg {
+                zoom: 0.7;
+            }
         }
     }
 }
 
-// Control panel
-.panels__5e434 {
+//Control panel
+[class*="panels"] {
     width: $panel-width;
-    height: auto;
+    height: 50px;
     position: fixed;
-    bottom: -1px;
+    bottom: 0px;
     left: calc(100vw - $panel-width);
     z-index: 1;
     @include box.barGradient(false, $color-taskbar-1, $color-taskbar-2);
+    border-radius: 0px;
 
     &:hover {
         z-index: 2;
     }
 }
-
-//Where I left off:
-//Remember the todo in css-vars or somewhere for the code block
-//  transform-origin: top left; is that for rotation, or can i use that to move
-// the user area? although pos: abs and bot: right: should get the results i want
-//the ks and + and discovery icons have a weirdly offset bg

@@ -1,6 +1,6 @@
 @use "../top/vars" as *;
 
 //Background
-.bg__960e4 {
+[class*="bg"] {
     background: var(--xp-background-color, $xp-background-color) var(--xp-background-image, $xp-background-image) center/cover;
 }
