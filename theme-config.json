@@ -1,0 +1,11 @@
+{
+    "name": "Exponent",
+    "description": "A Windows XP style discord theme, originally by Saltssaumure",
+    "author": "sometimeskieran",
+    "version": "1.0.0",
+    "dist": {
+        "clients": {
+            "compileFor": ["betterdiscord", "userstyle"]
+        }
+    }
+}

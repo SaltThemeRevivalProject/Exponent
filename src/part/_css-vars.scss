@@ -1,0 +1,50 @@
+@use "../top/color-default" as *;
+@use "../top/color-generic" as *;
+
+:root {
+    --xp-window-color-1: #{$blue-max};
+    --xp-window-color-2: #{$blue-vivid};
+    --xp-taskbar-color-1: #{$blue-bright};
+    --xp-taskbar-color-2: #{$blue-mild};
+    --xp-taskbar-color-3: #{$blue-select};
+    --xp-start-color-1: #{$green-max};
+    --xp-start-color-2: #{$green-bright};
+    --xp-shortcut-color-1: #{$green-vivid};
+    --xp-shortcut-color-2: #{$green-max};
+    --xp-ping-color-1: #{$red-bright};
+    --xp-ping-color-2: #{$red-max};
+    --xp-tooltip-color-1: #{$beige-light};
+    --xp-tooltip-color-2: #{$beige};
+    --xp-selected-color: #{$blue-select};
+}
+
+.theme-dark {
+    --xp-bg-color: #000;
+    --xp-bg-bright-color: #234;
+    --xp-bg-tint-color: #123;
+    --xp-bg-shade-color: #012;
+    --xp-txt-color: #fff;
+    --xp-border-color: #{$blue-select};
+    --xp-set-color: #{$white-overlay};
+    --xp-hover-color: #123;
+    --xp-zing-color: #a50;
+}
+
+.theme-light {
+    --xp-bg-color: #{$white};
+    --xp-bg-bright-color: #{$beige-light};
+    --xp-bg-tint-color: #{$beige};
+    --xp-bg-shade-color: grey;
+    --xp-txt-color: #{$black};
+    --xp-border-color: #{$black};
+    --xp-set-color: #{$black-overlay};
+    --xp-hover-color: lightgrey;
+    --xp-zing-color: orange;
+}
+
+code,
+.markup_d6076c pre {
+    font-family: var(--font-code);
+}
+
+//TODO: Fix the top markup reference

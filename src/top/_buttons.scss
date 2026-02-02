@@ -1,0 +1,41 @@
+@use "vars" as *;
+@use "color-generic" as *;
+@use "shadows" as shd;
+
+@mixin button($ISBEIGE: false, $ISINSET: false) {
+    @if $ISBEIGE {
+        --xp-bg-bright-color: #{$color-tooltip-1};
+        --xp-bg-tint-color: #{$color-tooltip-2};
+        --xp-bg-shade-color: grey;
+        --xp-txt-color: #{$black};
+        --xp-border-color: #{$black};
+    }
+    border-radius: 3px;
+    border: 1px solid var(--xp-border-color);
+    background: var(--xp-bg-tint-color);
+    color: var(--xp-txt-color);
+    @include shd.boxShadow($ISINSET);
+}
+
+@mixin inset($ISBEIGE: false) {
+    @include button($ISBEIGE: $ISBEIGE, $ISINSET: true);
+}
+
+@mixin winButton($SIZE, $ISRED) {
+    top: 0;
+    min-height: $SIZE;
+    min-width: $SIZE;
+    height: $SIZE;
+    width: $SIZE;
+    margin: 4px;
+    margin-left: 0;
+    border: 1px solid $white;
+    border-radius: 3px;
+    color: $white;
+
+    @if $ISRED {
+        background: radial-gradient(circle at 20% 20%, $white-overlay, $color-ping-1, $color-ping-2);
+    } @else {
+        background: radial-gradient(circle at 20% 20%, $white-overlay, $color-window-2, $color-window-1);
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "exponent",
+  "description": "A Windows XP style Discord theme, originally by Saltssaumure",
+  "author": {
+    "name": "sometimeskieran",
+    "url": "https://github.com/sometimeskieran"
+  },
+  "scripts": {
+    "dev-private": "theme-scss dev -C theme-config.private.json"
+  },
+  "devDependencies": {
+    "theme-scss": "^1.1.4"
+  }
+}
