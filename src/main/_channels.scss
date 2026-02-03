@@ -1,0 +1,225 @@
+@use "../top/vars" as *;
+@use "../top/color-generic" as *;
+@use "../top/boxes" as box;
+
+//Channels sidebar
+[class*="sidebarList"] {
+    position: absolute;
+    bottom: 0;
+    max-height: 60vh;
+    background: transparent;
+    @include box.windowBox(15px);
+
+    //Title and channels
+    [class*="container"] {
+        background: transparent;
+        padding-bottom: 0px;
+
+        //Title
+        [class*="header_"]:has([class*="guildDropdown"]) {
+            @include box.windowTitle();
+            height: 48px;
+            z-index: 3;
+
+            [class*="headerContent"] {
+                color: $white;
+
+                [class*="name"] {
+                    color: $white;
+                }
+
+                [class*="flowerStar"] {
+                    color: $white-overlay;
+                }
+            }
+        }
+
+        //Server image banner
+        [class*="animatedContainer"] {
+            background: transparent;
+            z-index: 2;
+            border-radius: 8px 8px 0 0;
+            margin-top: 48px;
+
+            [class*="bannerImage"]::before {
+                display: none;
+            }
+        }
+
+        //Server event
+        [class*="channelNotice"] {
+            background: $color-tooltip-2;
+            --header-primary: #{$black};
+            --header-secondary: #{$black};
+            @include box.windowBox(15px);
+            border-bottom: none;
+
+            [class*="joinButton"] button {
+                border-radius: 0;
+            }
+        }
+
+        //Channels
+        #channels {
+            @include box.startMenuList;
+            margin: 0px;
+
+            //Channel names
+            :is(
+                [class*="modeSelected"],
+                [class*="notInteractive"][class*="modeConnected"],
+                [class*="notInteractive"][class*="modeSelected"]
+            ) {
+                [class*="name"] {
+                    color: $white;
+                }
+            }
+
+            //Divider
+            [class*="sectionDivider"] {
+                background: transparent;
+            }
+
+            //Category
+            [class*="containerDefault"]:has([class*="mainContent"]):not(
+                    :nth-child(2)
+                ) {
+                @include box.startMenuDivider(7px);
+            }
+
+            //Channel
+            :has([data-list-item-id*="channels"]) {
+                border-radius: 0;
+
+                //Channel actions
+                [class*="actionIcon"] {
+                    color: var(--xp-set-color);
+                }
+
+                //Voice channel member limit
+                [class*="channelInfo"] {
+                    --background-primary: lightgrey;
+                    --background-tertiary: grey;
+
+                    [class*="wrapper"] {
+                        border-radius: 3px;
+                    }
+                }
+            }
+
+            //User in voice channel
+            [class*="voiceUser"] {
+                [class*="content"] {
+                    border-radius: 0;
+                }
+            }
+
+            //Selected channel
+            [class*="modeSelected"] {
+                //Channel actions
+                [class*="actionIcon"] {
+                    color: $white-overlay;
+                }
+            }
+
+            //Muted channel
+            [class*="modeMuted"] {
+                [class*="name"],
+                [class*="icon"] {
+                    color: grey;
+                }
+            }
+        }
+    }
+
+    //DMs
+    [class*="privateChannels"] {
+        background: transparent;
+
+        //Find conversation
+        [class*="searchBar"] {
+            @include box.windowTitle;
+
+            //Search bar text
+            [class*="overflow"] {
+                background: transparent;
+                font-size: 14px;
+                line-height: $title-height;
+                font-weight: 600;
+                font-family: Tahoma, sans-serif;
+                text-shadow: 0 1px 1px $black;
+                color: $white;
+            }
+        }
+
+        //DMs and friends
+        [class*="scroller"] {
+            @include box.startMenuList;
+            padding: 0;
+            margin: 0;
+        }
+
+        //DMs category
+        [class*="privateChannelsHeaderContainer"] {
+            padding-top: 20px;
+            margin-bottom: 10px;
+            position: relative;
+            @include box.startMenuDivider(2px);
+        }
+
+        [class*="sectionDivider"] {
+            display: none;
+        }
+
+        //Menu item
+        [class*="channel"] {
+            border-radius: 0;
+
+            //New badge on shop
+            [class*="badge"] {
+                border-radius: 3px;
+            }
+        }
+    }
+
+    //Explore servers category list
+    & > [class*="container"]:not(:has(#channels)) {
+        @include box.startMenuList;
+        position: relative;
+        border-radius: 8px 8px 0 0;
+
+        &::before {
+            display: none;
+        }
+
+        //Header - Discover text
+        [class*="header"] {
+            @include box.windowTitle;
+            margin: 0;
+            padding: 12px 0;
+            text-indent: 16px;
+            font-size: 16px;
+            width: 100%;
+            z-index: 2;
+
+            h2 {
+                color: white;
+            }
+        }
+
+        //Category
+        [class*="nav"] {
+            color: var(--channels-default);
+            border-radius: 0;
+
+            [class*="selected"] {
+                background-color: var(--background-modifier-selected);
+                color: $white;
+
+                svg {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
