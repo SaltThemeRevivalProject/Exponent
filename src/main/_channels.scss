@@ -1,6 +1,7 @@
 @use "../top/vars" as *;
 @use "../top/color-generic" as *;
 @use "../top/boxes" as box;
+@use "../top/buttons" as bt;
 
 //Channels sidebar
 [class*="sidebarList"] {
@@ -59,6 +60,40 @@
             }
         }
 
+        //Unread indicator with icon/number - top and bottom
+        [class*="bar"]:has([class*="barText"]) {
+            @include bt.button($ISBEIGE: true);
+
+            [class*="unreadIcon"],
+            [class*="barText"] {
+                color: $black !important;
+            }
+        }
+
+        //Unread indicator with icon/number - bottom only
+        &:is([class*="bottom"]):has([class*="barText"]) {
+            position: fixed;
+            bottom: 8px;
+        }
+
+        //Unread indicator without icon - top
+        [class*="unreadTop"] {
+            [class*="unreadBar"] {
+                @include bt.button($ISBEIGE: true);
+            }
+        }
+
+        //Unread indicator without icon - bottom
+        [class*="unread"]:not([class*="unreadTop"]) {
+            [class*="unreadBar"] {
+                position: fixed;
+                left: 11px;
+                bottom: 8px;
+                width: calc(100% - 25px);
+                @include bt.button($ISBEIGE: true);
+            }
+        }
+
         //Channels
         #channels {
             @include box.startMenuList;
@@ -89,7 +124,7 @@
 
             //Channel
             :has([data-list-item-id*="channels"]) {
-                border-radius: 0;
+                border-radius: 0 !important;
 
                 //Channel actions
                 [class*="actionIcon"] {
@@ -116,6 +151,7 @@
 
             //Selected channel
             [class*="modeSelected"] {
+                background-color: var(--background-modifier-selected);
                 //Channel actions
                 [class*="actionIcon"] {
                     color: $white-overlay;
