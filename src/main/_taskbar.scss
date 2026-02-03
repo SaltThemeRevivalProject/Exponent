@@ -125,7 +125,7 @@
                 width: 26px;
             }
 
-            //Fix folders being too wide due to Discord somehow manually setting width: 
+            //Fix folders being too wide due to Discord somehow manually setting width:
             [class*="stack"] {
                 height: 100% !important;
             }
@@ -153,7 +153,7 @@
 //Control panel
 [class*="panels"] {
     width: $panel-width;
-    height: 50px;
+    height: auto;
     position: fixed;
     bottom: 0px;
     left: calc(100vw - $panel-width);
@@ -163,5 +163,129 @@
 
     &:hover {
         z-index: 2;
+    }
+
+    &:has([class*="activityPanel"], [class*="container"]) {
+        border-radius: 8px 8px 0 0;
+    }
+
+    //Now playing game/activity
+    [class*="panel"] {
+        background: transparent;
+        border-bottom: 0;
+
+        //Game title and icon
+        [class*="title"],
+        [class*="badge"] {
+            color: $white;
+        }
+    }
+
+    //Text displaying where you are
+    [class*="subtext"] {
+        color: $white-overlay;
+
+        //Subtext under "Voice Connected", which has the text inside
+        //another div compared to the subtext under the game/activity.
+        & > div {
+            color: inherit !important;
+        }
+    }
+
+    //Voice chat controls
+    [class*="wrapper"] > [class*="container"] {
+        background: inherit;
+        border-bottom: 0;
+        padding-top: 16px;
+
+        //Ping icon and voice status text
+        [class*="rtcConnectionStatusWrapper"] {
+            [class*="rtcConnectionStatusLabel"],
+            [class*="ping"] {
+                filter: brightness(160%) saturate(200%);
+            }
+        }
+
+        //Top voice buttons (krisp, end call)
+        [class*="voiceButtonsContainer"] {
+            //Icon
+            path {
+                fill: $white-overlay;
+                --interactive-normal: #{$white-overlay};
+            }
+
+            button[class*="enabled"]:hover {
+                path {
+                    fill: $white;
+                    --interactive-normal: #{$white};
+                }
+
+                background: linear-gradient(
+                    to bottom,
+                    $color-taskbar-3,
+                    $color-taskbar-1
+                );
+            }
+        }
+
+        //Video stream buttons
+        [class*="actionButtons"] {
+            button {
+                @include bt.button($ISBEIGE: true);
+
+                &[class*="buttonActive"] {
+                    background: $color-tooltip-2;
+                    @include shd.boxShadow($ISINSET: true);
+                }
+            }
+        }
+    }
+
+    //User and settings
+    & > [class*="container"] {
+        height: var(--server-container);
+        flex-direction: row-reverse;
+        background: transparent;
+
+        //Self info
+        [class*="avatarWrapper"] {
+            margin: 0 0 0 6px;
+            padding: 0 4px 0 0;
+            flex-direction: row-reverse;
+
+            //Username
+            [class*="nameTag"] {
+                text-shadow: 0 1px 1px $black;
+
+                [class*="title"] {
+                    color: $white;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        //Deafen, mute, settings controls
+        [class*="buttons"] {
+            gap: 5px;
+            [class*="button"] {
+                color: $white-overlay;
+                --interactive-normal: #{$white-overlay};
+                max-width: 25px;
+
+                svg {
+                    zoom: 0.7;
+                }
+
+                &[class*="enabled"]:hover {
+                    color: $white;
+                    --interactive-normal: #{$white};
+                    background: linear-gradient(
+                        to bottom,
+                        $color-taskbar-3,
+                        $color-taskbar-1
+                    );
+                }
+            }
+        }
     }
 }

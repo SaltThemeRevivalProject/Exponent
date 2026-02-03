@@ -16,7 +16,7 @@
     --HSL-server-alignment: flex-start; /* Alignment of the server list. | OPTIONS: flex-start, center, flex-end | DEFAULT: flex-start */
 
     //Taskbar height
-    --custom-guild-list-width: 50px !important;
+    --custom-guild-list-width: 51px !important;
 }
 
 //Channels sidebar
@@ -36,6 +36,6 @@
 }
 
 #guild-list-unread-dms > div {
-        width: var(--guildbar-avatar-size) !important;
-        height: var(--guildbar-avatar-size) !important;
+    width: var(--guildbar-avatar-size) !important;
+    height: var(--guildbar-avatar-size) !important;
 }
