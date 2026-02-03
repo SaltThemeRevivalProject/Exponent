@@ -27,7 +27,10 @@
 //Taskbar
 //leave gap in server bar for control panel
 #app-mount [class*="guilds"] {
-    height: calc(100vw - $panel-width) !important;
+    //The +10px and padding-bottom is needed to get rid of a shadow
+    //that forms near the control panel when the taskbar is too short
+    height: calc(100vw - $panel-width + 10px) !important;
+    padding-bottom: 10px;
 
     //Spacing between each server icon
     [class*="stack"] {
