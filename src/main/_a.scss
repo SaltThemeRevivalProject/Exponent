@@ -1,6 +1,164 @@
 @use "../top/vars" as *;
+@use "../top/boxes" as box;
+@use "../top/shortcutIcon" as ico;
 
 //Background
 [class*="bg"] {
-    background: var(--xp-background-color, $xp-background-color) var(--xp-background-image, $xp-background-image) center/cover;
+    background: var(--xp-background-color, $xp-background-color)
+        var(--xp-background-image, $xp-background-image) center/cover;
+}
+
+//Transparency
+:is(#app-mount, body) {
+    background: transparent;
+}
+
+//Main view
+[class*="app"] > [class*="layers"] > div > [class*="container"] {
+    // Channels sidebar and main chat
+    & > [class*="base"] {
+        // Notice banner
+        [class*="notice"] {
+            top: $window-top;
+            margin: 0 $window-right 0 $window-left;
+            width: auto;
+            border-radius: 0;
+            border: solid $color-taskbar-3;
+            border-width: 0 2px 0 2px;
+            box-shadow: none;
+        }
+
+        //Call banner (in DMs)
+        //What is this?
+        .wrapper_cb9592 {
+            z-index: 0;
+        }
+
+        [class*="content"]:has([class*="chatContent"])::before {
+            z-index: 0;
+        }
+
+        //Top bar
+        [class*="chat"] > [class*="subtitleContainer"] > [class*="title"] {
+            [class*="toolbar"] {
+                // Move show/hide member list button
+                [class*="iconWrapper"]:has([d^="M14.5 8a3"]) {
+                    @include ico.makeIcon(
+                        auto,
+                        50px,
+                        '[class*="icon"]:has([d^="M14.5 8a3"])',
+                        3px
+                    );
+                    top: $window-top;
+                }
+            }
+        }
+
+        //Main DM and friend list view
+        [class*="container"]:has([class*="peopleColumn"]),
+        //Explore servers view - we check it by checking the logo,
+        //If this doesn't work, it is likely discord changed the logo in the header bar
+        //It is also likely that Discord has changed the container layout (right now there is 2 container class divs)
+        [class*="container"]:has([d^="M10.55 4.4c.13-.24.1-.54-.12-.71L8.6"]):nth-of-type(2),
+        //University hub
+        //I left this unchanged as I (kieran) personally don't have access to a uni hub
+        //so I can't test this.
+        .scroller_a39aa3,
+        //Buy nitro page
+        [class*="applicationStore"],
+        //Shop
+        [class*="shop"]:has([class*="shopViewWrapper"]),
+        //Forums
+        [class*="chat"]:has([class*="card"]),
+        //Main chat
+        [class*="chat"]:has([class*="uploadArea"]) {
+            @include box.mainWindow;
+        }
+
+        //University hub
+        //See above comment as to why this is left unchanged
+        .scroller_a39aa3 {
+            height: auto;
+        }
+
+        //Main chat and top bar
+        [class*="chat"]:has([class*="uploadArea"]) {
+            //Main chat
+            [class*="chatContent"] {
+                //Message box
+                [class*="form"] {
+                    //Autocompleter
+                    [class*="autocomplete"] {
+                        width: calc(100% - 150px);
+                    }
+                }
+            }
+
+            //Forums
+            .headerRow_f369db,
+            .list_f369db > div:first-child {
+                min-width: 0;
+            }
+            .header_f369db {
+                z-index: 0;
+            }
+
+            //Members list
+            [class*="membersWrap"] {
+                @include box.startMenuList;
+
+                position: fixed;
+                right: 30px;
+                top: 180px;
+                height: 65vh;
+                max-height: calc(100vh - 400px);
+                @include box.windowHasPseudoTitle("Members");
+
+                [class*="members"] {
+                    background: var(--xp-bg-color);
+
+                    // Member group
+                    .membersGroup_c8ffbb:not(:nth-child(2)) {
+                        position: relative;
+                        @include box.startMenuDivider(7px);
+                    }
+
+                    // Member
+                    .member_c8ffbb,
+                    .member__5d473 {
+                        background: var(--xp-bg-color);
+
+                        .container__91a9d,
+                        .layout__91a9d {
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+
+            // VC video
+            .video_cb9592 {
+                z-index: 0;
+            }
+        }
+
+        // With members list visible
+        &:has(.membersWrap_c8ffbb) {
+            // VC video controls
+            .bottomControls_bfe55a {
+                width: auto;
+                padding-right: 150px;
+            }
+
+            // Message
+            .message__5126c {
+                padding-right: 140px !important;
+
+                // Message actions
+                .container__040f0 {
+                    right: 130px;
+                }
+            }
+        }
+    }
 }

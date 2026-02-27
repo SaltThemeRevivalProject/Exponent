@@ -1,0 +1,75 @@
+@use "../top/vars" as *;
+@use "../top/color-generic" as *;
+@use "../top/boxes" as box;
+@use "../top/buttons" as bt;
+@use "../top/shortcutIcon" as ico;
+
+/* .withFrame__421ed {
+    margin-top: 0;
+} */
+
+//Top bar
+[class*="base"] > [class*="bar"] {
+    width: calc($window-right - $window-left);
+    position: absolute;
+    left: $window-left;
+    right: $window-right;
+    top: calc($window-top - $title-height);
+    z-index: 2;
+    @include box.windowTitle();
+
+    //Move help icon
+    [class*="iconWrapper"] {
+        &:has([d^="M12 23a11"]) {
+            @include ico.makeIcon(50px, auto, "[class*='icon']", 13px);
+            top: $window-top + 90px;
+        }
+    }
+
+    //Move inbox icon
+    [class*="clickable"]:has([d^="M5 2a3"]) {
+        @include ico.makeIcon(50px, auto, "&", 8px);
+        top: $window-top;
+
+        svg {
+            zoom: 1.6;
+        }
+    }
+
+    //Top title
+    [class*="title"] {
+        display: none;
+    }
+
+    //Discord logo
+    [class*="leading"],
+    [class*="wordmarkWindows"] {
+        color: $white;
+        padding-top: 2px;
+
+        &::before {
+            content: "Discord";
+            display: block;
+            position: relative;
+            font-size: 14px;
+            line-height: $title-height;
+            font-weight: 600;
+            font-family: Tahoma, sans-serif;
+            text-shadow: 0 1px 1px $black;
+            padding-left: 10px;
+        }
+
+        svg {
+            display: none;
+        }
+    }
+
+    // Min / Max / Close buttons
+    .winButton__421ed {
+        @include bt.winButton(20px, false);
+
+        &.winButtonClose__421ed {
+            @include bt.winButton(20px, true);
+        }
+    }
+}

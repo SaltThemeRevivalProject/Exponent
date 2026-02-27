@@ -1,9 +1,15 @@
 @use "../top/vars" as *;
 @use "../top/color-generic" as *;
 
-@mixin makeIcon($LEFT-OFFSET, $RIGHT-OFFSET, $INNER-ELEMENT) {
+@mixin makeIcon(
+    $LEFT-OFFSET,
+    $RIGHT-OFFSET,
+    $INNER-ELEMENT,
+    $TITLE-TOP-OFFSET: 0px
+) {
     position: fixed;
     height: auto;
+    width: auto;
     margin: 0;
     right: $RIGHT-OFFSET;
     left: $LEFT-OFFSET;
@@ -26,7 +32,7 @@
         content: attr(aria-label);
         display: block;
         position: absolute;
-        top: 46px;
+        top: 46px + $TITLE-TOP-OFFSET;
         width: fit-content;
         font-size: 12px;
         line-height: 12px;

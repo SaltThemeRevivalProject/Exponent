@@ -9,7 +9,8 @@
 }
 
 @mixin mainWindow {
-    margin: $window-top $window-right $window-bottom $window-left;
+    top: $window-top - $title-height;
+    margin: 0 $window-right $window-bottom $window-left;
     overflow: hidden;
     z-index: 1;
     @include windowBox($VERTICAL-OFFSET: 3px);
@@ -24,8 +25,16 @@
         $SHADOW: -2px 0;
     }
 
-    background: linear-gradient(to $DIRECTION, $COLOR-DARK, $COLOR-DARK 12%, $COLOR-LIGHT);
-    box-shadow: (inset 0 0 3px 2px $COLOR-DARK, inset $SHADOW 2px 1px $white-overlay);
+    background: linear-gradient(
+        to $DIRECTION,
+        $COLOR-DARK,
+        $COLOR-DARK 12%,
+        $COLOR-LIGHT
+    );
+    box-shadow: (
+        inset 0 0 3px 2px $COLOR-DARK,
+        inset $SHADOW 2px 1px $white-overlay
+    );
 }
 
 @mixin windowTitle {
@@ -81,7 +90,12 @@
         top: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(to right, transparent, var(--xp-zing-color), transparent);
+        background: linear-gradient(
+            to right,
+            transparent,
+            var(--xp-zing-color),
+            transparent
+        );
     }
 }
 
@@ -93,7 +107,12 @@
         top: $OFFSET;
         width: 100%;
         height: 2px;
-        background: linear-gradient(to right, transparent 10%, var(--xp-hover-color), transparent 90%);
+        background: linear-gradient(
+            to right,
+            transparent 10%,
+            var(--xp-hover-color),
+            transparent 90%
+        );
     }
 }
 
