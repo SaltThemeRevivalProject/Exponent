@@ -7,5 +7,8 @@
         "clients": {
             "compileFor": ["betterdiscord", "userstyle"]
         }
+    },
+    "dev": {
+        "mod": "betterdiscord"
     }
 }
