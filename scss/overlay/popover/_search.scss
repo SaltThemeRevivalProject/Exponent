@@ -3,22 +3,27 @@
 @use "../../top/buttons" as bt;
 
 // Search options
-.container_eedf95 {
+.container__16eb0 {
     --header-secondary: var(--xp-txt-color);
     --text-muted: var(--xp-txt-color);
     --interactive-normal: var(--xp-txt-color);
+    --interactive-text-default: var(--xp-txt-color);
     --search-popout-option-non-text-color: var(--xp-txt-color);
     --search-popout-option-user-nickname: var(--xp-txt-color);
     --search-popout-option-user-username: var(--xp-txt-color);
     --search-popout-date-picker-hint-text: var(--xp-txt-color);
     --background-floating: var(--xp-bg-tint-color);
+    --background-surface-higher: var(--xp-bg-tint-color);
     --background-modifier-hover: #{$color-selected};
+    --interactive-background-hover: #{$color-selected};
+    --background-mod-subtle: #{$color-selected};
     --search-popout-option-fade: linear-gradient(to right, transparent, var(--xp-bg-tint-color) ;);
     --search-popout-option-fade-hover: linear-gradient(to right, transparent, $color-selected 60%);
+    background: var(--xp-bg-tint-color);
     border-radius: 0;
     border: 1px solid var(--xp-border-color);
 
-    .option_b0286e {
+    .itemContainer__971b5 {
         border-radius: 0;
     }
 
@@ -60,14 +65,6 @@
                 background: var(--xp-bg-tint-color);
                 color: grey;
             }
-        }
-    }
-
-    .hintValue_b0286e {
-        @include bt.button;
-
-        &:hover {
-            background: inherit;
         }
     }
 }

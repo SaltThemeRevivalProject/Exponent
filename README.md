@@ -111,8 +111,8 @@
 | `--xp-zing-color`                  | Panel top decoration colour | Any [colour][css-color].                         | `#A05000` (dark) / `#FFA500` (light)                                  |
 | `--xp-txt-color`                   | Panel text colour           | Any [colour][css-color].                         | `#FFF` (dark) / `#000` (light)                                        |
 | `--xp-bg-bright-color`             | Button highlight colour     | Any [colour][css-color].                         | `#203040` (dark) / `#F0EFED` (light)                                  |
-| `--xp-bg-tint-color`               | Button background colour    | Any [colour][css-color].                         | `#202020` (dark) / `#EBE8D7` (light)                                  |
-| `--xp-bg-shade-color`              | Button shadow colour        | Any [colour][css-color].                         | `#101010` (dark) / `#808080` (light)                                  |
+| `--xp-bg-tint-color`               | Button background colour    | Any [colour][css-color].                         | `#112233` (dark) / `#EBE8D7` (light)                                  |
+| `--xp-bg-shade-color`              | Button shadow colour        | Any [colour][css-color].                         | `#001122` (dark) / `#808080` (light)                                  |
 | `--xp-border-color`                | Button/panel border colour  | Any [colour][css-color].                         | `#1665CA` (dark) / `#000000` (light)                                  |
 
 ### BetterDiscord

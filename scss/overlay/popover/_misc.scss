@@ -1,31 +1,38 @@
 @use "../../top/vars" as *;
+@use "../../top/color-generic" as *;
 @use "../../top/boxes" as box;
 @use "../../top/buttons" as bt;
 
-// VC ping
-.container__13b2a {
-    @include box.beigeBox;
-
-    .popoutText_aa3bfa {
-        color: var(--xp-txt-color);
-    }
-}
-
 // Stream preview
-.streamPreview_adbea6 {
+.streamPreview__0489e {
     @include box.beigeBox;
 
-    .watchButton_adbea6 {
+    .activityActions__0489e button {
         @include bt.button;
     }
 }
 
+// Voice user activity ("Playing Now")
+.container_d7bc5d:has(.buttonsWrapper__65bb6) {
+    @include box.beigeBox;
+    --text-strong: #{$black};
+    --text-muted: #{$black};
+    --header-primary: #{$black};
+    --header-secondary: #{$black};
+    color: $black;
+
+    .buttonsWrapper__65bb6 button {
+        @include bt.button($ISBEIGE: true);
+        color: $black;
+    }
+}
+
 // Emoji info
-.popoutContainer_cf58b5 {
+.popoutContainer__0f481 {
     @include box.beigeBox;
 
     // Nitro button
-    .shinyButton_d5e126 {
+    .shinyButton__6a443 {
         @include bt.button;
     }
 }

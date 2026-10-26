@@ -1,23 +1,24 @@
 @use "../top/vars" as *;
+@use "../top/color-generic" as *;
 @use "../top/boxes" as box;
 @use "../top/shortcutIcon" as ico;
 
 // Overall background
-.bg_d4b6c5 {
+.bg__960e4 {
     background: var(--xp-background-color, $xp-background-color) var(--xp-background-image, $xp-background-image) center/cover;
 }
 
 // Transparency
-:is(.appMount_ea7e65, body, .app_a01fb1) {
+:is(.appMount__51fd7, body, .app__160d8) {
     background: transparent;
 }
 
 // Main view
-.container_a4d4d9 {
+.container__5e434 {
     // Channels sidebar and main chat
-    .base_a4d4d9 {
+    .base__5e434 {
         // Notice banner
-        .notice__5fd4c {
+        .notice__6e2b9 {
             top: $window-top;
             margin: 0 $window-right 0 $window-left;
             width: auto;
@@ -28,143 +29,165 @@
         }
 
         // Call banner (in DMs)
-        .wrapper_d880dc {
+        .wrapper_cb9592 {
             z-index: 0;
         }
 
-        .content_a7d72e::before {
+        .content_f75fb0::before {
             z-index: 0;
         }
 
         // Top bar
-        .chat_a7d72e > .subtitleContainer_a7d72e > .title_a7d72e {
-            .toolbar_e44302 {
-                // Move help icon
-                .anchor_af404b .iconWrapper_e44302:only-of-type {
-                    @include ico.makeIcon(50px, auto, ".icon_e44302");
-                    top: $window-top + 90px;
-                }
-
+        .chat_f75fb0 > .subtitleContainer_f75fb0 > .title_f75fb0 {
+            .toolbar__9293f {
                 // Move show/hide member list button
-                .iconWrapper_e44302:has([d^="M14 8.00598"]) {
-                    @include ico.makeIcon(auto, 50px, ".icon_e44302");
+                .iconWrapper__9293f:has([d^="M14.5 8a3 3"]) {
+                    @include ico.makeIcon(auto, 50px, ".icon__9293f");
+                    top: $window-top;
+                    width: auto;
+
+                    .icon__9293f {
+                        box-sizing: border-box;
+                        margin: 0;
+                    }
                 }
             }
         }
 
         // Main DM and friend list view
-        .container_c2739c,
+        .container__133bf,
         // Explore servers view
-        .pageWrapper_a3a4ce,
-        // University hub
-        .scroller_a39aa3,
+        .container_a592e1,
         // Buy nitro page
-        .applicationStore_cecc86,
+        .applicationStore_f07d62,
+        // Shop page
+        .shop__6db1d,
+        // Quests page
+        .container__955a3,
+        // Server boosts page
+        .container__89463,
         // Main chat
-        .chat_a7d72e:not(.container_f1fd9c > .chat_a7d72e) {
+        .chat_f75fb0:not(.container__0b563 > .chat_f75fb0) {
             @include box.mainWindow;
         }
 
-        // University hub
-        .scroller_a39aa3 {
+        .shop__6db1d,
+        .container__955a3,
+        .container__89463 {
             height: auto;
         }
 
         // Main chat and top bar
-        .chat_a7d72e:not(.container_f1fd9c > .chat_a7d72e) {
+        .chat_f75fb0:not(.container__0b563 > .chat_f75fb0) {
             // Main chat
-            .chatContent_a7d72e {
+            .chatContent_f75fb0 {
                 // Message box
-                .form_a7d72e {
+                .form_f75fb0 {
                     // Gift nitro button
-                    .buttons_d0696b > .button_dd4f85 {
-                        @include ico.makeIcon(50px, auto, ".buttonWrapper_cecf00");
+                    .buttons__74017 > .container__5287f > .button__74017 {
+                        @include ico.makeIcon(50px, auto, ".buttonWrapper__24af7");
                         top: $window-top;
 
-                        .button_d0696b {
+                        .buttonWrapper__24af7 {
+                            padding: 0;
                             margin: 0;
-
-                            .buttonWrapper_cecf00 {
-                                padding: 0;
-                                margin: 0;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                            }
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                         }
                     }
 
                     // Autocompleter
-                    .autocomplete_f23da8 {
+                    .autocomplete__13533 {
                         width: calc(100% - 150px);
                     }
                 }
             }
 
             // Forums
-            .headerRow_a6d69a,
-            .list_a6d69a > div:first-child {
+            .headerRow_f369db,
+            .list_f369db > div:first-child {
                 min-width: 0;
             }
-            .header_a6d69a {
+            .header_f369db {
                 z-index: 0;
             }
 
             // Members list
-            .membersWrap_cbd271 {
+            .membersWrap_c8ffbb {
                 @include box.startMenuList;
 
                 position: fixed;
                 right: 30px;
                 top: 180px;
+                // Fixed width, matches the channel list window
+                width: 240px;
+                min-width: 0;
                 height: 65vh;
                 max-height: calc(100vh - 400px);
                 @include box.windowHasPseudoTitle("Members");
 
-                .members_cbd271 {
+                .members_c8ffbb {
                     background: var(--xp-bg-color);
+                    width: 100%;
 
                     // Member group
-                    .membersGroup_cbd271:not(:nth-child(2)) {
+                    .membersGroup_c8ffbb:not(:nth-child(2)) {
                         position: relative;
                         @include box.startMenuDivider(7px);
                     }
 
+                    // Member group name
+                    .membersGroup_c8ffbb {
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        font-size: 12px;
+                    }
+
                     // Member
-                    .member_cbd271,
-                    .member_a31c43 {
+                    .member_c8ffbb,
+                    .member__5d473 {
                         background: var(--xp-bg-color);
 
-                        .container_e9f61e,
-                        .layout_e9f61e {
+                        .container__91a9d,
+                        .layout__91a9d {
                             border-radius: 0;
+                        }
+
+                        // Selected: white name on the blue highlight, whatever the role colour
+                        &.selected__91a9d .name__703b9 {
+                            color: $white !important;
+                            -webkit-text-fill-color: $white;
+                            background: none;
                         }
                     }
                 }
             }
 
             // VC video
-            .video_d880dc {
+            .video_cb9592 {
                 z-index: 0;
             }
         }
 
-        // With members list visible
-        &:has(.membersWrap_cbd271) {
-            // VC video controls
-            .bottomControls_dd069c {
-                width: auto;
-                padding-right: 150px;
-            }
+        // VC video controls, with members list visible
+        &:has(.membersWrap_c8ffbb) .bottomControls_bfe55a {
+            width: auto;
+            padding-right: 150px;
+        }
 
-            // Message
-            .message_d5deea {
-                padding-right: 140px !important;
+        // Messages clear the members window, gap set once on the chat area
+        .chatContent_f75fb0:has(+ .container_c8ffbb) {
+            --xp-members-message-gap: 140px;
+            --xp-members-actions-gap: 130px;
+        }
 
-                // Message actions
-                .container_a3b500 {
-                    right: 130px;
-                }
+        .message__5126c {
+            padding-right: var(--xp-members-message-gap, var(--space-xl)) !important;
+
+            // Message actions
+            .container__040f0 {
+                right: var(--xp-members-actions-gap, 0px);
             }
         }
     }

@@ -2,21 +2,42 @@
 @use "../../../top/boxes" as box;
 
 // Pinned messages
-.messagesPopoutWrap_ac90a2 {
-    .header_ac90a2 {
+.messagesPopoutWrap__432f4 {
+    @include box.windowBox($VERTICAL-OFFSET: 3px);
+    border-radius: 8px 8px 0 0;
+
+    .header__432f4 {
         @include box.windowTitle;
+        @include box.titleOverFrame;
+        // Keeps its height when the list is long
+        padding: 0 9px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+
+        // Title
+        .titleContainer__432f4 {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            > div {
+                font: 600 14px Tahoma, sans-serif;
+            }
+        }
     }
 
-    .messagesPopout_ac90a2 {
+    .messagesPopout__432f4 {
         @include box.startMenuList;
         background: var(--xp-bg-tint-color);
 
-        .messageGroupWrapper_ac90a2 {
+        .messageGroupWrapper__432f4 {
             @include box.indentBox;
             border: 0;
         }
 
-        .body_ac90a2 {
+        .body__432f4 {
             color: var(--xp-txt-color);
         }
     }

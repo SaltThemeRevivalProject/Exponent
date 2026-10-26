@@ -3,118 +3,184 @@
 @use "../top/boxes" as box;
 
 // Channels sidebar
-.sidebar_a4d4d9 {
+.sidebar__5e434 {
     position: absolute;
-    bottom: 0;
-    max-height: 60vh;
+    bottom: var(--custom-guild-list-width);
+    height: 60vh;
+    // Fixed width, matches the members window (beats the width Discord saves when dragged)
+    width: 240px !important;
+    display: flex;
+    flex-direction: column;
     background: transparent;
     @include box.windowBox(15px);
+    // Control panel lives in the taskbar, no space needed for it
+    --custom-app-panels-height: 0px;
+
+    // Drag-to-resize edge, the window keeps its fixed width
+    .sidebarResizeHandle__5e434 {
+        display: none;
+    }
+
+    // Discord's strip under the user panel, which lives in the taskbar here
+    &::after {
+        display: none;
+    }
+
+    .sidebarList__5e434 {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+    }
+
+    // Full width, so the window border lines up with the title bar and banner
+    .privateChannels_e6b769 > .scroller__99e7c,
+    .container__2637a > .scroller__629e4 {
+        margin-bottom: 0;
+        margin-right: 0;
+    }
 
     // Title and channels
-    .container_ee69e0 {
+    .container__2637a {
         background: transparent;
 
         // Title
-        .header_fd6364 {
+        .header_f37cb1 {
             @include box.windowTitle();
             height: 48px;
+            z-index: 3;
 
-            .headerContent_fd6364 {
+            .headerContent_f37cb1 {
                 color: $white;
 
-                .flowerStar_ff7d90 {
+                .flowerStar__3e3b0 {
                     color: $white-overlay;
                 }
             }
         }
 
         // Server image banner
-        .animatedContainer_fd6364 {
+        // Discord's glow around the banner, it spills outside the window
+        .headerEllipseBackdrop_f37cb1,
+        .headerEllipseForeground_f37cb1,
+        .headerGlass_f37cb1 {
+            display: none;
+        }
+
+        // Banner shows below the window title, which stays on top
+        .animatedContainer_f37cb1 {
             background: transparent;
             z-index: 2;
-            border-radius: 8px 8px 0 0;
+            border-radius: 0;
+            top: 48px;
+            height: 82px;
+            // Inside the window's side borders
+            inset-inline: 1px;
+            width: auto;
 
-            .bannerImage_fd6364::before {
+            .bannerImage_f37cb1::before {
                 display: none;
+            }
+
+            .bannerImage_f37cb1,
+            .bannerImg_f37cb1 {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
 
         // Server event
-        .container_fa295b {
+        .container__581dd {
             background: $color-tooltip-2;
             --header-primary: #{$black};
+            --text-strong: #{$black};
             --header-secondary: #{$black};
+            --text-muted: #{$black};
             @include box.windowBox(15px);
 
             // Inner box
-            .channelNotice_a6cd4e {
+            .channelNotice_e2d7b8 {
                 border-bottom: none;
 
                 // Event Details button
-                .joinButton_a6cd4e {
+                .joinButton_e2d7b8 {
                     border-radius: 0;
                 }
             }
         }
 
         // Channels
-        .scroller_c43953 {
+        .scroller__629e4 {
             @include box.startMenuList;
 
+            // No orange stripe under the server title
+            &::after {
+                display: none;
+            }
+
             // Channel names
-            :is(.modeSelected_d8bfb3, .notInteractive_d8bfb3.modeConnected_d8bfb3, .notInteractive_d8bfb3.modeSelected_d8bfb3) {
-                .name_d8bfb3 {
+            :is(.modeSelected__2ea32, .notInteractive__2ea32.modeConnected__2ea32, .notInteractive__2ea32.modeSelected__2ea32) {
+                .name__2ea32 {
                     color: $white;
                 }
             }
 
             // Divider
-            .sectionDivider_c43953 {
+            .sectionDivider__629e4 {
                 background: transparent;
             }
 
             // Category
-            .containerDefault_a08117:not(:nth-child(2)) {
+            .containerDefault__29444:not(:nth-child(2)) {
                 @include box.startMenuDivider(7px);
             }
 
+            // Category name
+            .name__29444 {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 12px;
+            }
+
             // Channel
-            :is(.wrapper_d8bfb3, .container_b15955, .link_d8bfb3) {
+            :is(.wrapper__2ea32, .container_e45859, .link__2ea32) {
                 border-radius: 0;
 
                 // Channel actions
-                .actionIcon_f6f816 {
+                .actionIcon_c69b6d {
                     color: var(--xp-set-color);
                 }
 
                 // Voice channel member limit
-                .channelInfo_f6f816 {
+                .channelInfo_c69b6d {
                     --background-primary: lightgrey;
+                    --background-base-lower: lightgrey;
                     --background-tertiary: grey;
+                    --background-base-lowest: grey;
 
-                    .wrapper_a5bc92 {
+                    .wrapper__260e1 {
                         border-radius: 3px;
                     }
                 }
             }
 
             // User in voice channel
-            .content_cdc675 {
+            .content__07f91 {
                 border-radius: 0;
             }
 
             // Selected channel
-            .modeSelected_d8bfb3 {
+            .modeSelected__2ea32 {
                 // Channel actions
-                .actionIcon_f6f816 {
+                .actionIcon_c69b6d {
                     color: $white-overlay;
                 }
             }
 
             // Muted channel
-            .modeMuted_d8bfb3 {
-                .name_d8bfb3,
-                .icon_d8bfb3 {
+            .modeMuted__2ea32 {
+                .name__2ea32,
+                .icon__2ea32 {
                     color: grey;
                 }
             }
@@ -122,83 +188,86 @@
     }
 
     // DMs
-    .privateChannels_f0963d {
+    .privateChannels_e6b769 {
         background: transparent;
 
         // Find conversation
-        .searchBar_f0963d {
+        .searchBar_e6b769 {
             @include box.windowTitle;
 
-            .searchBarComponent_f0963d {
+            .searchBarComponent_e6b769,
+            .button_a22cb0 {
                 background: transparent;
+                border: 0;
                 font-size: 14px;
                 line-height: $title-height;
                 font-weight: 600;
                 font-family: Tahoma, sans-serif;
                 text-shadow: 0 1px 1px $black;
                 color: $white;
+
+                .buttonChildrenWrapper_a22cb0 {
+                    justify-content: flex-start;
+                    padding-inline: 0;
+                }
             }
         }
 
         // DMs and friends
-        .scroller_c47fa9 {
+        .scroller__99e7c {
             @include box.startMenuList;
+
+            // Names in the start menu text colour, status lines stay muted
+            .interactive__972a0 {
+                color: var(--xp-txt-color);
+            }
+        }
+
+        // Hide Discord's divider, the start menu divider shows instead
+        .sectionDivider_e6b769 {
+            visibility: hidden;
         }
 
         // DMs category
-        .privateChannelsHeaderContainer_c47fa9 {
+        .privateChannelsHeaderContainer__99e7c {
             position: relative;
-            @include box.startMenuDivider(2px);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 12px;
+            @include box.startMenuDivider(-4px);
         }
 
         // Menu item
-        .container_b15955 {
+        .container_e45859 {
             border-radius: 0;
         }
     }
 
     // Explore servers category list
-    & > .scrollerBase_eed6a8 {
+    .container__551b0 {
         @include box.startMenuList;
-        position: relative;
         border-radius: 8px 8px 0 0;
 
-        &::before {
+        // No orange stripe above the title
+        &::after {
             display: none;
         }
 
         // Header
-        .discoverHeader_b992d4 {
+        .header__551b0 {
             @include box.windowTitle;
-            margin: 0;
-            padding: 12px 0;
-            text-indent: 16px;
-            font-size: 16px;
-            position: fixed;
-            width: 240px;
-            z-index: 2;
+            height: auto;
+            padding: 12px 16px;
         }
 
         // Category
-        .container_e9f61e {
+        .navItem__551b0 {
             color: var(--channels-default);
             border-radius: 0;
 
-            &:first-of-type {
-                margin-top: 62px;
+            &.selected__551b0 {
+                background-color: var(--background-modifier-selected);
             }
-
-            &:nth-last-of-type(2) {
-                margin-bottom: 10px;
-            }
-
-            .layout_e9f61e {
-                border-radius: 0;
-            }
-        }
-
-        .categoryItem_c72b37.selectedCategoryItem_c72b37 .itemInner_c72b37 {
-            background-color: var(--background-modifier-selected);
         }
     }
 }
