@@ -25,10 +25,7 @@
     // The page starts below Discord's top bar
     margin-top: calc($window-top - var(--custom-app-top-bar-height));
     // Stay clear of the control panel when it grows
-    margin-bottom: max(
-        #{$window-bottom},
-        calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)
-    );
+    margin-bottom: max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px));
     overflow: hidden;
     z-index: 1;
     @include windowBox($VERTICAL-OFFSET: 3px);

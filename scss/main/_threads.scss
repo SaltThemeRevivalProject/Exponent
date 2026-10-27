@@ -60,10 +60,7 @@
     position: absolute;
     top: calc($window-top - var(--custom-app-top-bar-height));
     right: $window-right;
-    bottom: max(
-        #{$window-bottom},
-        calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)
-    );
+    bottom: max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px));
     height: auto;
 
     .container__01ae2 {

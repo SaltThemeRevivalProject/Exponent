@@ -7,7 +7,7 @@
     "discordID": "134142022092062720",
     "github": "Saltssaumure"
   },
-  "version": "1.9.0",
+  "version": "1.9.1",
   "updater": {
     "type": "store",
     "id": "net.saltssaumure.Exponent"
@@ -15,11 +15,11 @@
   "license": "AGPL-3.0-or-later",
   "type": "replugged-theme",
   "main": "scss/xp.scss",
-  "source": "https://github.com/Saltssaumure/xp-discord-theme",
+  "source": "https://github.com/SaltThemeRevivalProject/Exponent",
   "image": [
-    "https://saltssaumure.github.io/xp-discord-theme/preview/exponent1.png",
-    "https://saltssaumure.github.io/xp-discord-theme/preview/exponent2.png",
-    "https://saltssaumure.github.io/xp-discord-theme/preview/exponent3.png",
-    "https://saltssaumure.github.io/xp-discord-theme/preview/withSystemColor.png"
+    "https://saltthemerevivalproject.github.io/Exponent/preview/exponent1.png",
+    "https://saltthemerevivalproject.github.io/Exponent/preview/exponent2.png",
+    "https://saltthemerevivalproject.github.io/Exponent/preview/exponent3.png",
+    "https://saltthemerevivalproject.github.io/Exponent/preview/withSystemColor.png"
   ]
 }

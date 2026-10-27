@@ -41,13 +41,13 @@
         }
 
         &:is(
-                .vc-spotify-shuffle-on,
-                .vc-spotify-repeat-context,
-                .vc-spotify-repeat-track,
-                .vc-spotify-shuffle-on:hover,
-                .vc-spotify-repeat-context:hover,
-                .vc-spotify-repeat-track:hover
-            ) {
+            .vc-spotify-shuffle-on,
+            .vc-spotify-repeat-context,
+            .vc-spotify-repeat-track,
+            .vc-spotify-shuffle-on:hover,
+            .vc-spotify-repeat-context:hover,
+            .vc-spotify-repeat-track:hover
+        ) {
             .vc-spotify-button-icon,
             .vc-spotify-repeat-1 {
                 color: $color-shortcut-1;

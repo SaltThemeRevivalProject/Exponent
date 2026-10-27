@@ -25,7 +25,9 @@
 
         // Title, same font as the main window title
         > h1 {
-            font: 600 14px Tahoma, sans-serif;
+            font:
+                600 14px Tahoma,
+                sans-serif;
         }
 
         // Search bar
@@ -86,7 +88,8 @@
             margin: 0 4px 0 12px;
             // Window close icon, same as the main title bar button
             background:
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolygon fill='white' fill-rule='evenodd' points='11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1'/%3E%3C/svg%3E") center / 12px 12px no-repeat,
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolygon fill='white' fill-rule='evenodd' points='11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1'/%3E%3C/svg%3E")
+                    center / 12px 12px no-repeat,
                 radial-gradient(circle at 20% 20%, $white-overlay, $color-ping-1, $color-ping-2);
             pointer-events: none;
         }
