@@ -4,31 +4,75 @@
 @use "../../../top/buttons" as bt;
 
 // Inbox
-.recentMentionsPopout_ddb5b4 {
+.container__8cb2e {
+    @include box.windowBox($VERTICAL-OFFSET: 3px);
+    border-radius: 8px 8px 0 0;
+
     // Top bar
-    .header_f0cd33 {
-        @include box.windowTitle;
+    .header__06f80 {
+        height: auto;
+        padding: 0;
+        background: var(--xp-bg-tint-color);
         --interactive-normal: var(--xp-txt-color);
+        --interactive-text-default: var(--xp-txt-color);
         --interactive-active: var(--xp-txt-color);
+        --interactive-text-active: var(--xp-txt-color);
+
+        .headerTitle__06f80 {
+            @include box.windowTitle;
+            @include box.titleOverFrame;
+            padding: 0 4px 0 9px;
+            --interactive-normal: #{$white};
+            color: $white;
+
+            .inboxIcon__06f80 {
+                width: 20px;
+                height: 20px;
+                color: $white;
+            }
+
+            // Title
+            .inboxTitle__06f80 {
+                font: 600 14px Tahoma, sans-serif;
+            }
+
+            // Title bar buttons fit inside the bar
+            .controls__06f80 {
+                height: $title-height;
+                align-items: center;
+            }
+        }
+
+        // Tab row inside the window, right under the title bar
+        .headerTabs__06f80 {
+            margin: 0;
+        }
 
         // Mentions / unreads tabs
-        .topPill_a0 {
-            position: absolute;
-            bottom: -1px;
-            z-index: 1;
-            align-items: base;
+        .tabBar__06f80 {
+            width: auto;
+            margin: 0;
+            padding: 4px 4px 0;
+            border-bottom: 1px solid $color-taskbar-3;
+            align-items: end;
 
-            .tab_f0cd33 {
+            .tab__06f80 {
                 background: var(--xp-bg-tint-color);
                 border-radius: 3px 3px 0 0;
                 border: solid $color-taskbar-3;
                 border-width: 1px 1px 0 1px;
                 margin: 0;
+                height: 24px;
+                padding: 0 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 // Selected tab
-                &.selected_a0 {
+                &.selected_aa8da2 {
                     padding-top: 1px;
-                    height: 25px;
+                    height: 26px;
+                    color: $black;
                     background: linear-gradient(to bottom, orange, $white 10%, $color-tooltip-2 80%);
                 }
 
@@ -41,43 +85,44 @@
     }
 
     // Mark all as read button
-    &.container_f1c3d9 {
-        .header_f0cd33 .button__292b6 {
-            @include bt.winButton(26px, false);
-        }
+    .controls__06f80 .button_a22cb0 {
+        @include bt.winButton(22px, false);
     }
 
-    // Filter mentions button
-    &.messagesPopoutWrap_ac90a2 {
-        .header_f0cd33 .button__292b6 {
-            @include bt.winButton(26px, false);
-        }
+    // Friend requests count, a title bar button as wide as its icon and number
+    .controls__06f80 .friendRequestsButton_c7a32c {
+        @include bt.winButton(22px, false);
+        width: auto;
+        padding: 0 4px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
     }
 
     // Content
-    .messagesPopout_ac90a2,
-    .scroller_f1c3d9 {
+    .scroller__376cb {
         @include box.startMenuList;
         --header-primary: var(--xp-txt-color);
+        --text-strong: var(--xp-txt-color);
         --header-secondary: grey;
+        --text-muted: grey;
         background: var(--xp-bg-tint-color);
 
         // Channel unread group
-        .channel_d09ffd,
-        .container_ddb5b4 {
+        .box__376cb {
             // Channel group header
-            .channelHeader_f3978e {
+            .channelHeader__5d903 {
                 background: var(--xp-bg-tint-color);
 
                 // Buttons
-                .button__292b6 {
+                .button_a22cb0 {
                     @include bt.button;
                 }
             }
 
             // Message group
-            .messages_c06487,
-            .messageContainer_ddb5b4 {
+            .messages_d06995,
+            .singleMessage__376cb {
                 @include box.indentBox;
             }
         }

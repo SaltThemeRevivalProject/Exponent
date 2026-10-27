@@ -1,56 +1,68 @@
 @use "../top/vars" as *;
 @use "../top/color-generic" as *;
 @use "../top/boxes" as box;
+@use "../top/buttons" as bt;
 @use "../top/shortcutIcon" as ico;
 
-.baseLayer_d4b6c5.stop-animations {
+.baseLayer__960e4.stop-animations {
     opacity: 1 !important;
     transform: scale(1) !important;
 
-    .container_a4d4d9 {
+    .container__5e434 {
         filter: grayscale(0.8) brightness(0.5);
         backdrop-filter: brightness(1);
     }
 }
 
-.layers_d4b6c5 > .layer_d4b6c5 .animating_d4b6c5 {
+.layers__960e4 > .layer__960e4 .animating__960e4 {
     transform: none !important;
 }
 
-.layer_d4b6c5 {
+.layer__960e4 {
     background: transparent;
 
     // Settings menu
-    .standardSidebarView_c25c6d {
+    .standardSidebarView__23e6b {
         @include box.mainWindow;
+        // Clear the top bar and taskbar like the other windows
+        margin-top: $window-top;
+        margin-bottom: calc(max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)) + var(--custom-guild-list-width));
+        overflow: visible;
+        @include box.windowHasPseudoTitle("Properties");
 
         // Settings sidebar as separate window on left side
-        .sidebarRegion_c25c6d {
+        .sidebarRegion__23e6b {
             @include box.startMenuList;
             position: fixed;
             left: 60px;
-            top: 180px;
+            top: 230px;
             height: 65vh;
             max-height: calc(100vh - 400px);
+            min-height: 0;
+            width: 210px;
+            flex: none;
             @include box.windowHasPseudoTitle("Settings");
 
-            .sidebarRegionScroller_c25c6d {
+            .sidebarRegionScroller__23e6b {
                 background: var(--xp-bg-color);
+                width: 100%;
 
-                .sidebar_c25c6d {
+                .sidebar__23e6b {
+                    flex: 1;
+                    width: auto;
                     padding: 8px;
                     padding-right: 0;
 
-                    .separator_a0 {
+                    .separator_aa8da2 {
                         background: transparent;
                         position: relative;
                         @include box.startMenuDivider(-2px);
                     }
 
-                    .item_a0 {
+                    .item_aa8da2 {
                         border-radius: 0;
 
-                        &.selected_a0:not(.disabled_a0) {
+                        &.selected_aa8da2:not(.disabled_aa8da2) {
                             background: var(--background-modifier-selected);
                             color: $white;
                         }
@@ -60,38 +72,44 @@
         }
 
         // Settings contents
-        :is(.contentRegionShownSidebar_c25c6d, .contentRegion_c25c6d) {
+        :is(.contentRegionShownSidebar__23e6b, .contentRegion__23e6b) {
             justify-content: center;
 
             // Server setting roles sidebar
-            .sidebar_e87574 {
+            .sidebar_e29cd7 {
                 left: 0;
             }
 
             // Server setting roles main content
-            .customContainer_c25c6d,
-            .contentContainer_e8251c {
+            .customContainer__23e6b,
+            .contentContainer__91dc3 {
                 position: relative;
                 left: 0;
             }
 
             // Close settings button
-            .toolsContainer_c25c6d {
+            .toolsContainer__23e6b {
                 padding-top: 10px;
                 margin-right: 0;
-                position: absolute;
-                left: -80px;
+                // Level with the top row of desktop shortcuts, on every tab
+                position: fixed;
+                top: calc($window-top - 15px);
+                left: $window-left - 78px;
                 height: 50px;
 
-                .container_df5532 {
-                    @include ico.makeIcon(50px, auto, ".closeButton_df5532");
-                    position: unset;
+                .container_c2b141 {
+                    @include ico.makeIcon(50px, auto, ".closeButton_c2b141");
+                    position: relative;
+                    left: 0;
+                    width: 46px;
 
+                    // Label measured from the shortcut, so it sits the same on every tab
                     &::before {
                         content: "Close";
+                        top: 46px;
                     }
 
-                    .keybind_df5532 {
+                    .keybind_c2b141 {
                         display: none;
                     }
                 }
@@ -99,13 +117,95 @@
         }
     }
 
-    .pictureInPictureWindow_d0596b {
+    .pictureInPictureWindow__6341f {
         @include box.windowHasPseudoTitle("Stream");
         overflow: visible;
         border-radius: 0;
 
-        .pictureInPictureVideo_cadaa5 {
+        .pictureInPictureVideo_e4cb9a {
             border-radius: 0;
+        }
+    }
+}
+
+// User settings, opens as a modal
+.layer_bc663c:has(.container_abd9a8) {
+    align-items: center;
+    padding-right: 0;
+
+    .modal_e44912 {
+        position: fixed;
+        top: calc($window-top - $title-height);
+        left: $window-left;
+        right: $window-right;
+        bottom: calc(max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)) + var(--custom-guild-list-width));
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        border-radius: 8px 8px 0 0;
+        overflow: visible;
+        @include box.windowBox($VERTICAL-OFFSET: 3px);
+    }
+
+    // Let the sidebar escape the window
+    .container_abd9a8 {
+        contain: none;
+    }
+
+    // Rounded under the page title
+    .modalContentInner_e44912,
+    .content_e9e3ed {
+        border-radius: 8px 8px 0 0;
+    }
+
+    // Settings sidebar as separate window on left side
+    .sidebar__409aa {
+        @include box.startMenuList;
+        position: fixed;
+        // Same size and place as the server settings sidebar
+        left: 60px;
+        top: 230px;
+        width: 210px;
+        min-width: 0;
+        box-sizing: border-box;
+        padding-right: 8px;
+        height: 65vh;
+        max-height: calc(100vh - 400px);
+        overflow: visible;
+        z-index: 2;
+        background: var(--xp-bg-color);
+        @include box.windowHasPseudoTitle("Settings");
+
+        .navScroller__409aa {
+            background: var(--xp-bg-color);
+        }
+
+        .item_caf372 {
+            border-radius: 0;
+
+            &.active_caf372 {
+                background: var(--background-modifier-selected);
+                color: $white;
+            }
+        }
+    }
+
+    // Settings contents
+    .content_e9e3ed {
+        position: absolute;
+        inset: 0;
+
+        // Page title
+        .contentHeader_e9e3ed {
+            @include box.windowTitle;
+            height: $title-height;
+            min-height: $title-height;
+            color: $white;
+
+            .button_a22cb0 {
+                @include bt.winButton(20px, true);
+            }
         }
     }
 }

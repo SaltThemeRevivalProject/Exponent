@@ -5,51 +5,102 @@
 @use "../top/shadows" as shd;
 
 // Servers sidebar / Taskbar
-.guilds_a4d4d9 {
+.guilds__5e434 {
     z-index: 0;
+    @include box.barGradient(true, $color-window-1, $color-window-2);
     --status-danger: #{$color-ping-1};
+    --background-feedback-notification: #{$color-ping-1};
+    --badge-notification-background: #{$color-ping-1};
 
-    // Unread indicator
-    .unreadMentionsIndicatorBottom_fea3ef,
-    .unreadMentionsIndicatorTop_fea3ef {
-        width: 100%;
-
-        .bar_c10249 {
-            border-radius: 0;
-            background: linear-gradient(to bottom, transparent, $color-ping-1);
-        }
+    // "More unreads" markers at each end, not part of an XP taskbar
+    .unreadMentionsIndicatorBottom_ef3116,
+    .unreadMentionsIndicatorTop_ef3116 {
+        display: none;
     }
 
-    // Unread icon
-    .lowerBadge_c5f96a .numberBadge__40d6f {
-        opacity: 0.8;
+    // No visible scrollbar
+    .scroller_ef3116 {
+        scrollbar-width: none;
     }
 
-    .scroller_fea3ef {
+    // Unread badges, full size and over the lower part of the icon
+    .lowerBadge_cc5dd2 {
+        zoom: 1.6;
+        // Pivot on the right edge so wider badges stay flush with the icon
+        transform-origin: right center;
+        translate: -16.5px 7.7px;
+    }
+
+
+    // Smaller icons, centred in the bar (the bar is rotated, so X moves them up)
+    .tree_ef3116 .listItem__650eb,
+    .folderGroup__48112 {
+        zoom: 0.65;
+        translate: 11px 0;
+    }
+
+    // Unread / selected pill sits on the bottom edge of the bar
+    .wrapper__58105.overlay__58105 {
+        translate: -8.5px 0;
+    }
+
+    .tree_ef3116 .listItem__650eb:has(.guildSeparator__252b6) {
+        zoom: 1;
+        translate: none;
+    }
+
+    // Round icons
+    .wrapper_cc5dd2 foreignObject {
+        mask: none;
+        clip-path: circle(50%);
+    }
+
+    // Separator after start button (the bar is rotated, so height is its width)
+    .guildSeparator__252b6 {
+        width: 25px;
+        height: 2px;
+        background: hsla(216, 7%, 33%, 0.48);
+    }
+
+    .scroller_ef3116 {
         @include box.barGradient(true, $color-window-1, $color-window-2);
 
         // DMs icon / Start button
-        .tutorialContainer_f9623d {
+        .tutorialContainer__1f388 {
             @include box.barGradient(true, $color-start-1, $color-start-2);
-            position: relative;
-            padding: 5px 0 30px 0;
+            // Pinned to the left end while the server icons scroll under it
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            // Full height of the bar
+            width: var(--custom-guild-list-width);
+            // Discord logo
+            padding: 6px 0 29px 0;
+
+            .listItem__650eb {
+                translate: 14px 0;
+            }
+
+            .lowerBadge_cc5dd2 {
+                translate: -18.5px 6.9px;
+            }
             border-radius: 0 0 100% 100% / 0 0 12px 12px;
 
-            .wrapper_c5f96a {
-                .svg_c5f96a {
+            .wrapper_cc5dd2 {
+                .svg_cc5dd2 {
                     height: inherit;
                     width: inherit;
                 }
 
-                .wrapper_f90abb {
-                    .selected_ae80f7,
+                .wrapper__6e9f8 {
+                    &.selected__6e9f8,
                     &:hover {
-                        .childWrapper_f90abb {
+                        .childWrapper__6e9f8 {
                             color: $white;
                         }
                     }
 
-                    .childWrapper_f90abb {
+                    .childWrapper__6e9f8 {
                         color: $white-overlay;
                         background: transparent;
 
@@ -59,77 +110,112 @@
                     }
                 }
             }
+
         }
 
         // Unread pill
-        .item_fd07a3 {
+        .item__58105 {
             background: $white;
         }
 
         // Folder
-        .folder_bc7085 {
+        .folderButtonInner__48112 {
+            border-radius: 50%;
             background: radial-gradient(circle at 12px 12px, $white, $color-taskbar-1, $color-taskbar-3);
         }
 
         // Open folder
-        .expandedFolderBackground_bc7085 {
+        .folderGroupBackground__48112 {
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
 
         // Add server and discover servers
         // Favourite servers
-        .circleIconButton_db6521,
-        .childWrapperNoHoverBg_f90abb {
+        .circleIconButton__5bc7e,
+        .childWrapperNoHoverBg__6e9f8 {
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
             color: $white-overlay;
         }
     }
 }
 
+// Extra control panel height, used to keep windows above it
+#app-mount {
+    &:has(.panels__5e434 .wrapperVisible__0d616) {
+        --xp-tray-quest: 71px;
+    }
+
+    &:has(.panels__5e434 .container_e131a9) {
+        --xp-tray-rtc: 83px;
+    }
+
+    &:has(.panels__5e434 .panel__5dec7) {
+        --xp-tray-activity: 60px;
+    }
+}
+
 // Control panel
-.panels_a4d4d9 {
+.panels__5e434 {
     width: $panel-width;
     height: auto;
     position: fixed;
     bottom: -1px;
     left: calc(100vw - $panel-width);
-    z-index: 1;
+    z-index: 2;
+    --text-default: #{$white};
+    --text-muted: #{$white-overlay};
+    --text-subtle: #{$white-overlay};
     @include box.barGradient(false, $color-taskbar-1, $color-taskbar-2);
+    // Flat and square, flush with the taskbar
+    border: 0;
+    border-radius: 0;
 
     &:hover {
-        z-index: 2;
+        z-index: 3;
     }
 
-    &:has(.activityPanel_a4d4d9, .container_adcaac) {
+    &:has(.activityPanel__5e434, .container_e131a9, .wrapperVisible__0d616) {
         border-radius: 8px 8px 0 0;
     }
 
+    // Quest progress
+    .wrapper__0d616 {
+        background: transparent;
+        color: $white;
+    }
+
     // Now playing game/activity
-    .panel_bf1a22 {
+    .panel__5dec7 {
         background: transparent;
         border-bottom: 0;
 
         // Game title and icon
-        .title_d1da5f,
-        .badge_c07d45 {
+        .title_b6c092,
+        .badge_a629d4 {
             color: $white;
         }
     }
 
-    .subtext_e06aad {
+    .subtext__339d0 {
         color: $white-overlay;
     }
 
     // Voice chat controls
-    .container_adcaac {
+    .container_e131a9 {
         background: inherit;
         border-bottom: 0;
 
+        // Room for the call timer line
+        .connection_e131a9 {
+            height: auto;
+            padding-top: 6px;
+        }
+
         // Video stream buttons
-        .button_adcaac {
+        .button_e131a9 {
             @include bt.button($ISBEIGE: true);
 
-            &.buttonActive_adcaac {
+            &.buttonActive_e131a9 {
                 background: $color-tooltip-2;
                 @include shd.boxShadow($ISINSET: true);
             }
@@ -137,22 +223,28 @@
     }
 
     // User and settings
-    .container_b2ca13 {
-        height: var(--server-container);
+    .container__37e49 {
+        height: var(--custom-guild-list-width);
+        padding-block: 0;
+        // Keep the buttons off the tray's left edge
+        padding-inline: 6px 0;
         flex-direction: row-reverse;
         background: transparent;
 
         // Self info
-        .avatarWrapper_b2ca13 {
+        .accountPopoutButtonWrapper__37e49 {
             margin: 0 0 0 6px;
-            padding: 0 4px 0 0;
+            // Hover box with room around the name, centred in the bar
+            height: 38px;
+            padding: 0 4px 0 6px;
+            box-sizing: border-box;
             flex-direction: row-reverse;
 
             // Username
-            .nameTag_b2ca13 {
+            .nameTag__37e49 {
                 text-shadow: 0 1px 1px $black;
 
-                .title_d1da5f {
+                .title_b6c092 {
                     color: $white;
                     font-weight: normal;
                 }
@@ -161,19 +253,20 @@
     }
 
     // Buttons
-    .button_f67531 {
+    .button__67645 {
         color: $white-overlay;
         --interactive-normal: #{$white-overlay};
+        --interactive-text-default: #{$white-overlay};
     }
 
-    .withTagAsButton_b2ca13:hover,
-    .withTagless_b2ca13:hover,
-    .button_f67531.enabled_f67531:hover {
+    .accountPopoutButtonWrapper__37e49:hover,
+    .button__67645.enabled__67645:hover {
         background: linear-gradient(to bottom, $color-taskbar-3, $color-taskbar-1);
     }
 
-    .button_f67531.enabled_f67531:hover {
+    .button__67645.enabled__67645:hover {
         color: $white;
         --interactive-normal: #{$white};
+        --interactive-text-default: #{$white};
     }
 }

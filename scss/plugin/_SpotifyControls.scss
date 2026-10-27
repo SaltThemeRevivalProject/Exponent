@@ -3,25 +3,25 @@
 
 // Vencord SpotifyControls
 #vc-spotify-player {
-    .appMount_ea7e65 & {
+    .appMount__51fd7 & {
         background: unset;
         border-bottom: 0;
     }
 
     #vc-spotify-progress-bar {
-        > [class^="slider"] [class^="grabber"] {
+        > .slider_ec237e .grabber_ec237e {
             height: 16px !important;
             width: 10px !important;
             background-color: $color-tooltip-2;
             border-color: $color-start-2;
         }
 
-        > [class^="slider"] [class^="bar-"] {
+        > .slider_ec237e .bar_ec237e {
             height: 6px !important;
         }
     }
 
-    .colorStandard_fbc755 {
+    .vc-spotify-progress-time {
         color: $white-overlay;
     }
 

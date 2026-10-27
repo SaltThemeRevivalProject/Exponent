@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "vars" as *;
 @use "color-generic" as *;
 @use "shadows" as shd;
@@ -8,8 +9,26 @@
     box-shadow: 2px $VERTICAL-OFFSET 3px 2px $black-overlay;
 }
 
+// Title bar inside a windowBox, stretched over the 2px side borders
+@mixin titleOverFrame {
+    margin-inline: -2px;
+
+    @each $DPR in 1.25, 1.75, 2.25 {
+        @media (resolution: #{$DPR}dppx) {
+            margin-inline: math.div(math.floor(2 * $DPR), $DPR) * -1px;
+        }
+    }
+}
+
 @mixin mainWindow {
     margin: $window-top $window-right $window-bottom $window-left;
+    // The page starts below Discord's top bar
+    margin-top: calc($window-top - var(--custom-app-top-bar-height));
+    // Stay clear of the control panel when it grows
+    margin-bottom: max(
+        #{$window-bottom},
+        calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)
+    );
     overflow: hidden;
     z-index: 1;
     @include windowBox($VERTICAL-OFFSET: 3px);
@@ -33,7 +52,12 @@
     border-radius: 8px 8px 0 0;
     height: $title-height;
     --font-display: Tahoma, sans-serif;
+    --font-headline: Tahoma, sans-serif;
     --header-primary: #{$white};
+    --text-strong: #{$white};
+    --text-default: #{$white};
+    --interactive-text-default: #{$white};
+    --interactive-text-active: #{$white};
     text-shadow: 0 1px 1px $black;
 }
 
@@ -55,11 +79,28 @@
         text-indent: 9px;
         @include windowTitle;
     }
+
+    // Match the rounded border width at fractional scalings
+    @if $OFFSET == -2px {
+        @each $DPR in 1.25, 1.75, 2.25 {
+            @media (resolution: #{$DPR}dppx) {
+                &::before {
+                    $BORDER: math.div(math.floor(2 * $DPR), $DPR) * 1px;
+                    left: -$BORDER;
+                    right: -$BORDER;
+                }
+            }
+        }
+    }
 }
 
 @mixin startMenuList {
     --background-modifier-selected: #{$color-selected};
     --background-modifier-hover: var(--xp-hover-color);
+    --interactive-background-selected: #{$color-selected};
+    --interactive-background-hover: var(--xp-hover-color);
+    --interactive-text-active: var(--xp-txt-color);
+    --interactive-text-hover: var(--xp-txt-color);
     --channels-default: var(--xp-txt-color);
     --channel-icon: var(--xp-txt-color);
     --interactive-hover: var(--xp-txt-color);
@@ -67,6 +108,7 @@
     --interactive-muted: var(--xp-hover-color);
     --font-primary: Tahoma, sans-serif;
     --font-display: Tahoma, sans-serif;
+    --font-headline: Tahoma, sans-serif;
     --text-muted: grey;
 
     font-family: var(--font-primary);
@@ -93,7 +135,7 @@
         top: $OFFSET;
         width: 100%;
         height: 2px;
-        background: linear-gradient(to right, transparent 10%, var(--xp-hover-color), transparent 90%);
+        background: linear-gradient(to right, transparent 10%, lightgrey, transparent 90%);
     }
 }
 
@@ -105,6 +147,7 @@
 
 @mixin beigeBox {
     --text-normal: #{$black};
+    --text-default: #{$black};
     background: $color-tooltip-2;
     border: 1px solid $black;
     border-radius: 0;
