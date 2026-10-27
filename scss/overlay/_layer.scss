@@ -26,7 +26,10 @@
         @include box.mainWindow;
         // Clear the top bar and taskbar like the other windows
         margin-top: $window-top;
-        margin-bottom: calc(max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)) + var(--custom-guild-list-width));
+        margin-bottom: calc(
+            max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)) +
+                var(--custom-guild-list-width)
+        );
         overflow: visible;
         @include box.windowHasPseudoTitle("Properties");
 
@@ -138,7 +141,10 @@
         top: calc($window-top - $title-height);
         left: $window-left;
         right: $window-right;
-        bottom: calc(max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)) + var(--custom-guild-list-width));
+        bottom: calc(
+            max(#{$window-bottom}, calc(var(--xp-tray-quest, 0px) + var(--xp-tray-rtc, 0px) + var(--xp-tray-activity, 0px) + 10px)) +
+                var(--custom-guild-list-width)
+        );
         width: auto;
         height: auto;
         max-width: none;
