@@ -2,45 +2,84 @@
 @use "../top/color-generic" as *;
 @use "../top/boxes" as box;
 @use "../top/buttons" as bt;
+@use "../top/shortcutIcon" as ico;
 
-.withFrame_a934d8 {
-    margin-top: 0;
+// Extra bar Discord shows over full screen layers, the window title bars carry the buttons
+.bar_c38106.fixed_c38106 {
+    display: none;
 }
 
-.titleBar_a934d8 {
+// Titlebar
+.base__5e434 > .bar_c38106 {
     position: absolute;
     left: $window-left;
     right: $window-right;
     top: calc($window-top - $title-height);
+    min-height: $title-height;
     z-index: 2;
     @include box.windowTitle();
 
-    // Discord logo
-    .wordmarkWindows_a934d8 {
-        color: $white;
-        padding-top: 2px;
+    // Window title, always "Discord"
+    .title_c38106 {
+        justify-content: flex-start;
+        padding-left: 9px;
+
+        > * {
+            display: none;
+        }
 
         &::before {
             content: "Discord";
-            display: block;
-            position: relative;
+            color: $white;
             font-size: 14px;
             line-height: $title-height;
             font-weight: 600;
             font-family: Tahoma, sans-serif;
-            text-shadow: 0 1px 1px $black;
+        }
+    }
+
+    // Back / forward buttons
+    .leading_c38106 {
+        display: none;
+    }
+
+    .trailing_c38106 {
+        margin-left: auto;
+        color: $white;
+        --interactive-icon-default: #{$white-overlay};
+        --interactive-icon-hover: #{$white};
+
+        // Inbox / DevTools icons, white on the blue in both themes
+        .clickable__81391 {
+            color: $white-overlay;
+
+            &:hover {
+                color: $white;
+            }
         }
 
-        svg {
-            display: none;
+        // Move help icon
+        .anchor__14d82 > .clickable__81391 {
+            @include ico.makeIcon(50px, auto, "svg");
+            top: $window-top + 90px;
+            width: auto;
+
+            svg {
+                box-sizing: border-box;
+                margin: 0;
+            }
         }
     }
 
     // Min / Max / Close buttons
-    .winButton_a934d8 {
+    .winButtons_c38106::before {
+        display: none;
+    }
+
+    .winButton_c38106 {
         @include bt.winButton(20px, false);
 
-        &.winButtonClose_a934d8 {
+        &.winButtonClose_c38106 {
             @include bt.winButton(20px, true);
         }
     }

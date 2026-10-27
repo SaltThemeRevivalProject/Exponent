@@ -2,18 +2,25 @@
 @use "../top/color-generic" as *;
 
 // Tooltips
-.tooltip_b6c360 {
+.tooltip_c36707,
+.tooltip_fa450d {
     --background-floating: #{$color-tooltip-2};
+    --background-surface-higher: #{$color-tooltip-2};
+    --background-surface-high: #{$color-tooltip-2};
+    --border-subtle: #{$black};
     --text-normal: #{$black};
+    --text-default: #{$black};
     --interactive-normal: #{$black};
+    --interactive-text-default: #{$black};
     border: 1px solid $black;
     border-radius: 0;
 
-    .guildNameText_a6ae3c {
+    .guildNameText_b1f768 {
         color: inherit;
     }
 
-    .tooltipPointer_b6c360 {
+    .tooltipPointer_c36707 {
         --background-floating: #{$black};
+        --background-surface-higher: #{$black};
     }
 }

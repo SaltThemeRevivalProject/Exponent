@@ -5,8 +5,8 @@
 // Copyright (c) 2020 DiscordStyles
 // MIT license
 // https://github.com/DiscordStyles/HorizontalServerList
-@import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");
-@import url("https://discordstyles.github.io/Addons/bottomhsl.css");
+@import url("https://discordstyles.github.io/HorizontalServerList/HorizontalServerList.css");
+@import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
 
 // Adjustments
 :root {
@@ -16,34 +16,36 @@
     /* Spacing between each server icon | DEFAULT: 10px */
     --HSL-server-direction: column;
     /* Direct of the server list. | Options: column, column-reverse | DEFAULT: column */
+    --custom-guild-list-padding: 2.5px;
+    --HSL-top-padding: 0px;
 }
 
 // Channels sidebar
-#app-mount .sidebar_a4d4d9 {
+#app-mount .sidebar__5e434 {
     border-radius: 8px 8px 0 0;
 }
 
 // Taskbar
 // leave gap in server bar for control panel
-#app-mount .guilds_a4d4d9 {
+#app-mount .guilds__5e434 {
+    position: fixed !important;
+    top: 100vh !important;
+    left: 0 !important;
     height: calc(100vw - $panel-width) !important;
 
-    .scrollerBase_eed6a8,
-    .scrollerBase_c49869 {
+    .scrollerBase__99f8c,
+    .scrollerBase_d125d2 {
         padding-top: 0 !important;
     }
-}
-body #app-mount .guilds_a4d4d9 {
-    left: calc(100vw - $panel-width);
 }
 
 // Titlebar
 html.platform-osx #app-mount {
-    .base_a4d4d9 {
+    .base__5e434 {
         top: 0 !important;
     }
 
-    .typeMacOS_a934d8 {
+    .typeMacOS__421ed {
         width: auto;
     }
 }

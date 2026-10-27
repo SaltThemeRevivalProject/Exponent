@@ -4,29 +4,66 @@
 @use "../../../top/buttons" as bt;
 
 // Threads
-.browser_f542fc {
+.browser_d98031 {
+    @include box.windowBox($VERTICAL-OFFSET: 3px);
     border-radius: 8px 8px 0 0;
 
     // Top bar
-    .header_e664f3 {
+    .header_d9c882 {
         @include box.windowTitle;
+        @include box.titleOverFrame;
+        min-height: $title-height;
+        flex-shrink: 0;
+        padding: 0 0 0 9px;
 
         // #
-        .threadIcon_e664f3 {
+        .threadIcon_d9c882 {
+            width: 20px;
+            height: 20px;
             color: $white;
         }
 
+        // Title, same font as the main window title
+        > h1 {
+            font: 600 14px Tahoma, sans-serif;
+        }
+
         // Search bar
-        .searchBox_e664f3 {
+        .container__5a838 {
             @include bt.button($ISBEIGE: true, $ISINSET: true);
 
-            .input__48d49 {
+            .control__5a838,
+            .wrapper__72c38 {
+                height: 22px;
+                min-height: 0;
+            }
+
+            // The XP box is the only frame, also while typing
+            .wrapper__72c38 {
+                &,
+                &:focus-within {
+                    border: 0;
+                    border-radius: 0;
+                    outline: 0;
+                    background: transparent;
+                }
+            }
+
+            // Magnifier at the right end, grey like the placeholder
+            .icon__75098 {
+                order: 1;
+                --icon-strong: grey;
+            }
+
+            .input__75098 {
+                height: 20px;
+                padding-left: 6px;
                 color: $black;
             }
         }
 
         // Close button
-        .closeIcon_e664f3 {
+        .closeIcon_d9c882 {
             @include bt.winButton(26px, true);
             display: flex;
             align-items: center;
@@ -34,35 +71,56 @@
         }
 
         // Create thread button
-        .createButton_e664f3 {
+        .createButton_d9c882 .button_a22cb0 {
             @include bt.button($ISBEIGE: true);
+            height: 22px;
+            min-height: 0;
+            color: $black;
+        }
+
+        // Close button drawn on the title bar, the popout closes on an outside click
+        &::after {
+            content: "";
+            @include bt.winButton(20px, true);
+            flex: none;
+            margin: 0 4px 0 12px;
+            // Window close icon, same as the main title bar button
+            background:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolygon fill='white' fill-rule='evenodd' points='11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1'/%3E%3C/svg%3E") center / 12px 12px no-repeat,
+                radial-gradient(circle at 20% 20%, $white-overlay, $color-ping-1, $color-ping-2);
+            pointer-events: none;
         }
     }
 
     // Content
-    .list_c6aa12 {
+    .list_c441f0 {
         @include box.startMenuList;
+        // Holds the orange stripe at its top edge
+        position: relative;
         background: var(--xp-bg-tint-color);
 
         // Thread age
-        .sectionHeader_c6aa12 {
+        .sectionHeader_c441f0 {
             color: var(--xp-txt-color) !important;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         // Thread
-        .container_acb8b3 {
+        .container__6764b {
             @include box.indentBox;
             border: 0;
         }
 
         // No threads
-        .container_ebd74a {
-            .defaultColor_e9e35f,
+        .container__1b24f {
+            .defaultColor__5345c,
             .text-md-normal__6e567 {
                 color: var(--xp-txt-color) !important;
             }
 
-            .button_dd4f85 {
+            .button__201d5 {
                 @include bt.button;
             }
         }

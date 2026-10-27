@@ -3,31 +3,31 @@
 @use "../../top/buttons" as bt;
 
 // Select role preview
-.container_cbadbc {
+.container_d806b9 {
     @include box.beigeBox;
 
     // Search role
-    .container__33507 {
+    .container__5a838 {
         @include bt.inset;
     }
 
     // Role
-    .item_eef3ef {
+    .item_f975d3 {
         border-radius: 0;
 
-        &.selected_eef3ef {
+        &.selected_f975d3 {
             background: $color-selected;
         }
 
-        .itemLabel_eef3ef span {
+        .itemLabel_f975d3 span {
             background: var(--xp-bg-tint-color);
         }
 
         // Checkbox
-        .box_f6cde8 {
+        .box__09aca {
             border-radius: 0;
 
-            &.checked_f6cde8 {
+            &.checked__09aca {
                 background: $color-shortcut-2 !important;
 
                 path {
