@@ -1,20 +1,20 @@
 /**
  * @name Exponent
- * @author Saltssaumure
+ * @author Saltssaumure, SaltThemeRevivalProject
  * @authorLink https://github.com/Saltssaumure
  * @description A Windows XP style theme.
  * @license AGPL-3.0-or-later
  * @version 1.9
  * @invite uy8nKQVatp
- * @source https://github.com/Saltssaumure/xp-discord-theme
+ * @source https://github.com/SaltThemeRevivalProject/Exponent
  * @donate https://ko-fi.com/saltssaumure
 */
 
-@import url("https://saltssaumure.github.io/xp-discord-theme/xp.min.css");
+@import url("https://saltthemerevivalproject.github.io/Exponent/xp.min.css");
 
-/* See https://github.com/Saltssaumure/xp-discord-theme#customisation for customisation settings. */
+/* See https://github.com/SaltThemeRevivalProject/Exponent#customisation for customisation settings. */
 :root {
-    --xp-background-image:  url(https://saltssaumure.github.io/xp-discord-theme/img/bliss.avif);
+    --xp-background-image:  url(https://saltthemerevivalproject.github.io/Exponent/img/bliss.avif);
     --xp-background-color:  #0066CC;
     --xp-window-color-1:    #005AE7;
     --xp-window-color-2:    #0372FF;

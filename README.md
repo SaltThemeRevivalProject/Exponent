@@ -1,38 +1,38 @@
-[light]:        https://saltssaumure.github.io/xp-discord-theme/preview/exponent1.png
-[dark]:         https://saltssaumure.github.io/xp-discord-theme/preview/exponent2.png
-[customised]:   https://saltssaumure.github.io/xp-discord-theme/preview/exponent3.png
-[withSC]:       https://saltssaumure.github.io/xp-discord-theme/preview/withSystemColor.png
+[light]:        https://saltthemerevivalproject.github.io/Exponent/preview/exponent1.png
+[dark]:         https://saltthemerevivalproject.github.io/Exponent/preview/exponent2.png
+[customised]:   https://saltthemerevivalproject.github.io/Exponent/preview/exponent3.png
+[withSC]:       https://saltthemerevivalproject.github.io/Exponent/preview/withSystemColor.png
 
-[bsod-text]:    https://github.com/Saltssaumure/xp-discord-theme/blob/main/scss/top/_vars.scss
-[addons]:       https://github.com/Saltssaumure/xp-discord-theme/tree/main/addon
+[bsod-text]:    https://github.com/SaltThemeRevivalProject/Exponent/blob/main/scss/top/_vars.scss
+[addons]:       https://github.com/SaltThemeRevivalProject/Exponent/tree/main/addon
 
 [css-color]:        https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
 [css-string]:       https://developer.mozilla.org/en-US/docs/Web/CSS/string
-[discord]:          https://discord.gg/uy8nKQVatp
+[discord]:          https://discord.gg/NNXFh3bEUK
 
 [BetterDiscord]:    https://betterdiscord.app/
 [Replugged]:        https://replugged.dev/
 [Vencord]:          https://vencord.dev/
 
 [shield-donate]:    https://img.shields.io/badge/Donate-ko--fi-orange?style=flat-square&logo=kofi&logoColor=orange
-[ko-fi]:            https://ko-fi.com/saltssaumure "Buy me a coffee!"
+[ko-fi]:            https://ko-fi.com/saltssaumure "Buy the original creator a coffee!"
 
-[shield-css-dl]:    https://img.shields.io/github/downloads/Saltssaumure/xp-discord-theme/Exponent.theme.css?color=purple&label=Downloads&style=flat-square
-[shield-asar-dl]:   https://img.shields.io/github/downloads/Saltssaumure/xp-discord-theme/net.saltssaumure.Exponent.asar?color=purple&label=Downloads&style=flat-square
-[shield-repo-size]: https://img.shields.io/github/repo-size/Saltssaumure/xp-discord-theme?label=Repository&style=flat-square "Total size"
+[shield-css-dl]:    https://img.shields.io/github/downloads/SaltThemeRevivalProject/Exponent/Exponent.theme.css?color=purple&label=Downloads&style=flat-square
+[shield-asar-dl]:   https://img.shields.io/github/downloads/SaltThemeRevivalProject/Exponent/net.saltssaumure.Exponent.asar?color=purple&label=Downloads&style=flat-square
+[shield-repo-size]: https://img.shields.io/github/repo-size/SaltThemeRevivalProject/Exponent?label=Repository&style=flat-square "Total size"
 
-[github]:           https://github.com/Saltssaumure/xp-discord-theme
-[license]:          https://github.com/Saltssaumure/xp-discord-theme/blob/main/LICENSE
-[issues]:           https://github.com/Saltssaumure/xp-discord-theme/issues
-[.theme.css]:       https://github.com/Saltssaumure/xp-discord-theme/blob/main/Exponent.theme.css
+[github]:           https://github.com/SaltThemeRevivalProject/Exponent
+[license]:          https://github.com/SaltThemeRevivalProject/Exponent/blob/main/LICENSE
+[issues]:           https://github.com/SaltThemeRevivalProject/Exponent/issues
+[.theme.css]:       https://github.com/SaltThemeRevivalProject/Exponent/blob/main/Exponent.theme.css
 
 [release-bd]:       https://betterdiscord.app/theme/?id=823 "BetterDiscord store page"
-[release-css-gh]:   https://github.com/Saltssaumure/xp-discord-theme/releases/latest/download/Exponent.theme.css "Get latest release"
+[release-css-gh]:   https://github.com/SaltThemeRevivalProject/Exponent/releases/latest/download/Exponent.theme.css "Get latest release"
 [release-rp]:       https://replugged.dev/store/net.saltssaumure.Exponent "Replugged store page"
-[release-rp-gh]:    https://github.com/Saltssaumure/xp-discord-theme/releases/latest/download/net.saltssaumure.Exponent.asar "Get latest release"
+[release-rp-gh]:    https://github.com/SaltThemeRevivalProject/Exponent/releases/latest/download/net.saltssaumure.Exponent.asar "Get latest release"
 
 # Exponent Discord Theme
-[![Buy me a coffee on ko-fi][shield-donate]][ko-fi]
+[![Buy the original creator a coffee on ko-fi][shield-donate]][ko-fi]
 [![CSS GitHub downloads][shield-css-dl]][release-css-gh]
 [![Replugged GitHub downloads][shield-asar-dl]][release-rp-gh]
 [![Total repository size][shield-repo-size]][github]
@@ -85,7 +85,7 @@
 3. Click `Load missing Themes` and toggle on the theme card.
 #### Online
 1. Paste the link in `Settings` > `Vencord` > `Themes` > `Online Themes`:
-    - `https://saltssaumure.github.io/xp-discord-theme/Exponent.theme.css`
+    - `https://saltthemerevivalproject.github.io/Exponent/Exponent.theme.css`
 </details>
 
 ## Customisation
@@ -94,7 +94,7 @@
 
 | Variable name                      | Description                 | Valid values                                     | Default value                                                         |
 | ---------------------------------- | --------------------------- | ------------------------------------------------ | --------------------------------------------------------------------- |
-| `--xp-background-image`            | Background image            | Any image link encased in `url()`.               | `url(https://saltssaumure.github.io/xp-discord-theme/img/bliss.avif)` |
+| `--xp-background-image`            | Background image            | Any image link encased in `url()`.               | `url(https://saltthemerevivalproject.github.io/Exponent/img/bliss.avif)` |
 | `--xp-background-color`            | Background colour           | Any [colour][css-color].                         | `#003300`                                                             |
 | `--xp-window-color-1`, `-2`        | Window titlebar colours     | Any [colour][css-color].                         | `#005AE7`, `#0372FF`                                                  |
 | `--xp-taskbar-color-1`, `-2`, `-3` | Taskbar control colours     | Any [colour][css-color].                         | `#108CE4`, `#578CD0`, `#1665CA`                                       |
@@ -166,4 +166,4 @@ This theme is distributed in the hope that it will be useful, but WITHOUT ANY WA
 
 ## Questions or suggestions?
 - Post [an issue][issues] on GitHub.
-- Post in `#theme-support` on [my support server][discord].
+- Post in the exponent channel on [the Discord server][discord].
