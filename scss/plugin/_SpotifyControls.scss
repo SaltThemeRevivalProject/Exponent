@@ -1,5 +1,6 @@
 @use "../top/vars" as *;
 @use "../top/color-generic" as *;
+@use "../top/buttons" as bt;
 
 // Vencord SpotifyControls
 #vc-spotify-player {
@@ -8,21 +9,29 @@
         border-bottom: 0;
     }
 
+    // XP progress bar: beige track, green fill, no handle
     #vc-spotify-progress-bar {
-        > .slider_ec237e .grabber_ec237e {
-            height: 16px !important;
-            width: 10px !important;
-            background-color: $color-tooltip-2;
-            border-color: $color-start-2;
+        .bar_ec237e {
+            @include bt.button($ISBEIGE: true);
+            top: 9px;
+            height: 6px;
+            border: none;
+            overflow: hidden;
         }
 
-        > .slider_ec237e .bar_ec237e {
-            height: 6px !important;
+        .barFill_ec237e {
+            height: 100%;
+            background: linear-gradient(to bottom, $white-overlay, transparent 60%), $color-start-2;
+        }
+
+        .grabber_ec237e {
+            opacity: 0;
         }
     }
 
     .vc-spotify-progress-time {
         color: $white-overlay;
+        font-family: var(--font-primary);
     }
 
     #vc-spotify-song-title,
@@ -33,6 +42,7 @@
 
     .vc-spotify-button {
         color: $white-overlay;
+        background: transparent;
 
         &:hover {
             color: $white;
