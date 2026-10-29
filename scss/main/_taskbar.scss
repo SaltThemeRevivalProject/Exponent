@@ -43,6 +43,12 @@
         translate: -8.5px 0;
     }
 
+    // Servers in a folder are already scaled with the folder
+    .folderGroup__48112 .listItem__650eb {
+        zoom: 1;
+        translate: none;
+    }
+
     .tree_ef3116 .listItem__650eb:has(.guildSeparator__252b6) {
         zoom: 1;
         translate: none;
@@ -52,6 +58,11 @@
     .wrapper_cc5dd2 foreignObject {
         mask: none;
         clip-path: circle(50%);
+    }
+
+    // Folders keep their rounded square
+    .folderButton__48112 .wrapper_cc5dd2 foreignObject {
+        clip-path: none;
     }
 
     // Separator after start button (the bar is rotated, so height is its width)
@@ -116,13 +127,26 @@
             background: $white;
         }
 
-        // Folder
-        .folderButtonInner__48112 {
-            border-radius: 50%;
-            background: radial-gradient(circle at 12px 12px, $white, $color-taskbar-1, $color-taskbar-3);
+        // Closed folder
+        .folderGroup__48112:not(.isExpanded__48112) .folderButtonInner__48112 {
+            border-radius: 32%;
+            background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
 
         // Open folder
+        .folderGroup__48112.isExpanded__48112 {
+            padding-bottom: 8px;
+
+            .folderButtonInner__48112 {
+                background: transparent;
+            }
+
+            // Unread dots hang below the pill
+            .folderGuildsList__48112 {
+                overflow: visible;
+            }
+        }
+
         .folderGroupBackground__48112 {
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
