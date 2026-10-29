@@ -159,7 +159,6 @@
     position: fixed;
     bottom: -1px;
     left: calc(100vw - $panel-width);
-    // Behind the windows until hovered
     z-index: 1;
     --text-default: #{$white};
     --text-muted: #{$white-overlay};
