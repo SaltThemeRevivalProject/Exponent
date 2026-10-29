@@ -118,6 +118,7 @@
                 @include box.startMenuList;
 
                 position: fixed;
+                z-index: 1;
                 right: 30px;
                 top: 180px;
                 // Fixed width, matches the channel list window
