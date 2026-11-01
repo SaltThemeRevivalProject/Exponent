@@ -102,13 +102,30 @@ $frame-padding: 5px;
             border: 0;
             padding: 0;
             background: transparent;
+        }
 
+        &:not(:has(.mediaArea_e03578 img[src^="https://cdn.discordapp.com/"])) .mediaArea_e03578 {
             .imageWrapper,
             img {
                 width: auto !important;
                 height: auto !important;
                 max-width: 70vw;
                 max-height: 70vh;
+            }
+        }
+
+        // Zoomed in
+        &:has(.mediaArea_e03578 img[src^="https://cdn.discordapp.com/"]) {
+            // On the right, centred once wider than that allows
+            right: 50%;
+            translate: max(40vw, 50%) -50%;
+
+            .mediaArea_e03578 .imageWrapper,
+            .mediaArea_e03578 img {
+                width: auto !important;
+                height: auto !important;
+                max-width: 90vw;
+                max-height: 80vh;
             }
         }
 
