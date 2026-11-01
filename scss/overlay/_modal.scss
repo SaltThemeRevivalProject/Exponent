@@ -75,21 +75,18 @@ $frame-padding: 5px;
         max-height: none;
         margin: 0;
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr auto auto auto 1fr;
         grid-template-rows: none;
-        gap: $frame-padding;
+        gap: $frame-padding 0;
         justify-items: center;
         border: $frame-border solid $white !important;
         border-radius: 0;
         padding: $frame-padding;
         background: var(--bsod-color, $bsod-color) !important;
 
-        > * {
-            grid-area: auto;
-        }
-
         // Author and tools
         .topBar__6088c {
+            grid-area: 1 / 1 / 2 / 6;
             position: relative;
             justify-self: stretch;
             padding: 0 0 $frame-padding;
@@ -99,6 +96,7 @@ $frame-padding: 5px;
 
         // Picture
         .mediaArea_e03578 {
+            grid-area: 2 / 1 / 3 / 6;
             border: 0;
             padding: 0;
             background: transparent;
@@ -131,23 +129,31 @@ $frame-padding: 5px;
 
         // Previous / next
         .nav_b2eddf {
-            position: absolute;
-            top: 50%;
-            translate: 0 -50%;
-            z-index: 1;
+            align-self: start;
         }
 
         .navPrev_b2eddf {
-            left: $frame-padding;
+            grid-area: 3 / 2;
         }
 
         .navNext_b2eddf {
-            right: $frame-padding;
+            grid-area: 3 / 4;
         }
 
         // Thumbnails
         .galleryContainer_d75751 {
-            justify-self: stretch;
+            grid-area: 3 / 3;
+            width: auto;
+
+            translate: none;
+
+            .gallery_d75751 {
+                scrollbar-width: none;
+            }
+
+            .galleryItem_d75751 {
+                margin-block: 0;
+            }
         }
 
         // White icons
