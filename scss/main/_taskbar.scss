@@ -65,6 +65,14 @@
         clip-path: none;
     }
 
+    .folderHeader__48112 {
+        zoom: calc(40 / 48);
+    }
+
+    .folderHeader__48112 .lowerBadge_cc5dd2 {
+        zoom: calc(1.6 * 48 / 40);
+    }
+
     // Separator after start button (the bar is rotated, so height is its width)
     .guildSeparator__252b6 {
         width: 25px;
@@ -135,8 +143,6 @@
 
         // Open folder
         .folderGroup__48112.isExpanded__48112 {
-            padding-bottom: 8px;
-
             .folderButtonInner__48112 {
                 background: transparent;
             }
@@ -147,7 +153,10 @@
             }
         }
 
+        // Open folder pill
         .folderGroupBackground__48112 {
+            left: 2.5px;
+            width: 40px;
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
 
