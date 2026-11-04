@@ -156,7 +156,9 @@
         // Open folder pill
         .folderGroupBackground__48112 {
             left: 2.5px;
+            bottom: 4px;
             width: 40px;
+            border-radius: 20px;
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
 
