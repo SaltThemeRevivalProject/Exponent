@@ -137,21 +137,6 @@
     }
 }
 
-// Extra control panel height, used to keep windows above it
-#app-mount {
-    &:has(.panels__5e434 .wrapperVisible__0d616) {
-        --xp-tray-quest: 71px;
-    }
-
-    &:has(.panels__5e434 .container_e131a9) {
-        --xp-tray-rtc: 83px;
-    }
-
-    &:has(.panels__5e434 .panel__5dec7) {
-        --xp-tray-activity: 60px;
-    }
-}
-
 // Control panel
 .panels__5e434 {
     width: $panel-width;
@@ -184,6 +169,7 @@
 
     // Now playing game/activity
     .panel__5dec7 {
+        padding: 8px;
         background: transparent;
         border-bottom: 0;
 
@@ -200,13 +186,14 @@
 
     // Voice chat controls
     .container_e131a9 {
+        // Room around the panel
+        padding: 8px;
         background: inherit;
         border-bottom: 0;
 
         // Room for the call timer line
         .connection_e131a9 {
             height: auto;
-            padding-top: 6px;
         }
 
         // Video stream buttons
