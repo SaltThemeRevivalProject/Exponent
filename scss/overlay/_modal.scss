@@ -3,6 +3,9 @@
 @use "../top/boxes" as box;
 @use "../top/buttons" as bt;
 
+$frame-border: 2px;
+$frame-padding: 5px;
+
 // Modals
 // BSOD
 .backdrop_bc663c,
@@ -53,53 +56,110 @@
 
     .focusLock__49fc1:not(:has(.carouselModal_d3a6f0)),
     .container__8a031:not(.modal_e44912) {
-        border: 2px solid $white;
+        border: $frame-border solid $white;
         border-radius: 0;
-        padding: 5px;
+        padding: $frame-padding;
         background: var(--bsod-color, transparentize($bsod-color, 0.2));
     }
 
-    // Image viewer, one blue screen box on the right like the other dialogs:
-    // author bar on top, as wide as the picture
+    // Image viewer
     .carouselModal_d3a6f0 {
         position: fixed;
-        inset: 0;
+        inset: auto;
+        top: 50%;
+        right: 10vw;
+        translate: 0 -50%;
         width: auto;
         height: auto;
         max-width: none;
         max-height: none;
         margin: 0;
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr auto auto auto 1fr;
         grid-template-rows: none;
-        gap: 0;
-        justify-content: end;
-        align-content: center;
-        padding: 24px 10vw 24px 24px;
+        gap: $frame-padding 0;
+        justify-items: center;
+        border: $frame-border solid $white !important;
+        border-radius: 0;
+        padding: $frame-padding;
+        background: var(--bsod-color, $bsod-color) !important;
 
-        // One column: bar, then picture
-        > * {
-            grid-area: auto;
-        }
-
+        // Author and tools
         .topBar__6088c {
+            grid-area: 1 / 1 / 2 / 6;
             position: relative;
-            border: 2px solid $white;
-            border-bottom: 0;
-            padding: 5px;
-            background: var(--bsod-color, $bsod-color);
+            justify-self: stretch;
+            padding: 0 0 $frame-padding;
+            border-bottom: $frame-border solid $white;
+            background: transparent;
         }
 
+        // Picture
         .mediaArea_e03578 {
-            border: 2px solid $white;
-            padding: 5px;
-            background: var(--bsod-color, $bsod-color);
+            grid-area: 2 / 1 / 3 / 6;
+            border: 0;
+            padding: 0;
+            background: transparent;
         }
 
-        // Tools as plain white icons on the bar
+        &:not(:has(.mediaArea_e03578 img[src^="https://cdn.discordapp.com/"])) .mediaArea_e03578 {
+            .imageWrapper,
+            img {
+                width: auto !important;
+                height: auto !important;
+                max-width: 70vw;
+                max-height: 70vh;
+            }
+        }
+
+        // Zoomed in
+        &:has(.mediaArea_e03578 img[src^="https://cdn.discordapp.com/"]) {
+            // On the right, centred once wider than that allows
+            right: 50%;
+            translate: max(40vw, 50%) -50%;
+
+            .mediaArea_e03578 .imageWrapper,
+            .mediaArea_e03578 img {
+                width: auto !important;
+                height: auto !important;
+                max-width: 90vw;
+                max-height: 80vh;
+            }
+        }
+
+        // Previous / next
+        .nav_b2eddf {
+            align-self: start;
+        }
+
+        .navPrev_b2eddf {
+            grid-area: 3 / 2;
+        }
+
+        .navNext_b2eddf {
+            grid-area: 3 / 4;
+        }
+
+        // Thumbnails
+        .galleryContainer_d75751 {
+            grid-area: 3 / 3;
+            width: auto;
+
+            translate: none;
+
+            .gallery_d75751 {
+                scrollbar-width: none;
+            }
+
+            .galleryItem_d75751 {
+                margin-block: 0;
+            }
+        }
+
+        // White icons
         .actionButtons_cc1819,
-        .closeButton__6088c {
-            position: static;
+        .closeButton__6088c,
+        .nav_b2eddf {
             margin-left: auto;
             background: transparent;
             border: 0;
@@ -117,6 +177,11 @@
         }
 
         .closeButton__6088c {
+            position: static;
+        }
+
+        .closeButton__6088c,
+        .nav_b2eddf {
             margin-left: 0;
 
             .buttonInner_aec7ab {
