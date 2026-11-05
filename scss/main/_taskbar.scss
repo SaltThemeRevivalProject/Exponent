@@ -130,6 +130,14 @@
             }
         }
 
+        // Unread DMs
+        .stack_dbd263 {
+            // Direct parent of unread DM container
+            div:has(> .listItem__650eb) {
+                height: unset !important;
+            }
+        }
+
         // Unread pill
         .item__58105 {
             background: $white;
