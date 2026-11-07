@@ -21,13 +21,13 @@
 }
 
 // Channels sidebar
-#app-mount .sidebar__5e434 {
+#app-mount .sidebar_pog62O {
     border-radius: 8px 8px 0 0;
 }
 
 // Taskbar
 // leave gap in server bar for control panel
-#app-mount .guilds__5e434 {
+#app-mount .guilds_pog62O {
     position: fixed !important;
     top: 100vh !important;
     left: 0 !important;
@@ -35,19 +35,19 @@
     height: calc(100vw - $panel-width + 10px) !important;
     padding-bottom: 10px;
 
-    .scrollerBase__99f8c,
-    .scrollerBase_d125d2 {
+    .scrollerBase_JFqgFB,
+    .scrollerBase_tqapBM {
         padding-top: 0 !important;
     }
 }
 
 // Titlebar
 html.platform-osx #app-mount {
-    .base__5e434 {
+    .base_pog62O {
         top: 0 !important;
     }
 
-    .typeMacOS__421ed {
+    .typeMacOS_gnMEnp {
         width: auto;
     }
 }

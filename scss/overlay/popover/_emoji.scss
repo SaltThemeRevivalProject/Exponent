@@ -17,58 +17,58 @@
     --background-primary: #{$color-taskbar-3};
     --background-base-lower: #{$color-taskbar-3};
 
-    .header_c0e32c {
+    .header_-sZhZn {
         background: var(--xp-bg-tint-color);
         border-radius: 0;
 
-        .container__5a838 {
+        .container_VhFsFg {
             @include bt.inset;
         }
 
-        .diversitySelectorButton_a45a2a,
-        .diversitySelectorOptions_a45a2a {
+        .diversitySelectorButton_eHzdRB,
+        .diversitySelectorOptions_eHzdRB {
             @include bt.button;
             padding: 3px;
         }
     }
 
-    .emojiPicker_c0e32c {
+    .emojiPicker_-sZhZn {
         background: var(--xp-bg-color);
         border-radius: 0;
 
         // Emoji grid
-        .bodyWrapper_c0e32c {
+        .bodyWrapper_-sZhZn {
             box-shadow: (inset 0 0 2px 2px grey);
 
             // Section title
-            .wrapper__14245 {
+            .wrapper_kSdzCr {
                 background: linear-gradient(to bottom, transparent, var(--xp-bg-color), transparent);
             }
 
             // Hovered emoji
-            .emojiItem_fc7141.emojiItemSelected_fc7141 {
+            .emojiItem_6OcK5D.emojiItemSelected_6OcK5D {
                 @include bt.inset;
             }
         }
 
         // Emoji info
-        .inspector_aeaaeb {
+        .inspector_1bDrGE {
             background: var(--xp-bg-tint-color);
         }
     }
 
-    .categoryList_c0e32c {
+    .categoryList_-sZhZn {
         background: var(--xp-bg-tint-color);
     }
 }
 
 // Reaction emoji picker
-.animatorLeft_faf9c0 > #emoji-picker-tab-panel {
+.animatorLeft_98D4cN > #emoji-picker-tab-panel {
     @include box.windowHasPseudoTitle("Add a reaction");
 }
 
 // Gif / sticker / emoji picker
-.contentWrapper__08434 {
+.contentWrapper_58b0l2 {
     --interactive-normal: var(--xp-txt-color);
     --interactive-text-default: var(--xp-txt-color);
     --interactive-hover: var(--xp-txt-color);
@@ -89,17 +89,17 @@
     @include box.windowHasPseudoTitle("Chat addition");
 
     // Gif / sticker / emoji buttons
-    .navButton__08434 {
+    .navButton_58b0l2 {
         @include bt.button;
 
-        &.navButtonActive__08434 {
+        &.navButtonActive_58b0l2 {
             @include bt.inset;
         }
     }
 
     // Gif / sticker searchbar
-    .container__0e476,
-    .container__5a838 {
+    .container_isqatr,
+    .container_VhFsFg {
         @include bt.inset;
     }
 
@@ -111,23 +111,23 @@
             box-shadow: (inset 0 0 2px 2px var(--xp-bg-shade-color));
 
             // Section title
-            .wrapper__14245 {
+            .wrapper_kSdzCr {
                 background: linear-gradient(to bottom, transparent, var(--xp-bg-color), transparent);
             }
         }
 
         // Discord default sticker button
-        .standardStickerShortcut__3ad28 {
+        .standardStickerShortcut_40yGEf {
             background: var(--xp-bg-tint-color);
         }
 
         // Emoji info
-        .inspector_aeaaeb {
+        .inspector_1bDrGE {
             background: var(--xp-bg-tint-color);
         }
     }
 
-    .categoryList_c0e32c {
+    .categoryList_-sZhZn {
         background: var(--xp-bg-tint-color);
     }
 
@@ -136,17 +136,17 @@
         background: var(--xp-bg-tint-color);
 
         // Back button
-        .backButton_fed6d3 {
+        .backButton_rfDq2B {
             color: var(--xp-txt-color);
         }
 
         // Favs category
-        .categoryFadeBlurple_d02962 {
+        .categoryFadeBlurple_d2GpC2 {
             background: var(--xp-zing-color);
         }
 
         // Item / category
-        .result__2dc39 {
+        .result_H8nOze {
             background-color: var(--xp-bg-color) !important;
 
             &::after {
@@ -156,13 +156,13 @@
         }
 
         // Hovered
-        .result__2dc39:focus-visible,
-        .result__2dc39:hover {
+        .result_H8nOze:focus-visible,
+        .result_H8nOze:hover {
             box-shadow: 0 11px 22px 1px var(--xp-zing-color);
         }
 
         // Placeholder for loading gif
-        .placeholder__2dc39 {
+        .placeholder_H8nOze {
             border-radius: 0;
             background: var(--xp-set-color);
         }

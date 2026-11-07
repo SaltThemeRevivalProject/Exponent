@@ -5,7 +5,7 @@
 @use "../top/shadows" as shd;
 
 // Servers sidebar / Taskbar
-.guilds__5e434 {
+.guilds_pog62O {
     z-index: 0;
     @include box.barGradient(true, $color-window-1, $color-window-2);
     --status-danger: #{$color-ping-1};
@@ -13,18 +13,18 @@
     --badge-notification-background: #{$color-ping-1};
 
     // "More unreads" markers at each end, not part of an XP taskbar
-    .unreadMentionsIndicatorBottom_ef3116,
-    .unreadMentionsIndicatorTop_ef3116 {
+    .unreadMentionsIndicatorBottom_5dqHTG,
+    .unreadMentionsIndicatorTop_5dqHTG {
         display: none;
     }
 
     // No visible scrollbar
-    .scroller_ef3116 {
+    .scroller_5dqHTG {
         scrollbar-width: none;
     }
 
     // Unread badges, full size and over the lower part of the icon
-    .lowerBadge_cc5dd2 {
+    .lowerBadge_hqZPsU {
         zoom: 1.6;
         // Pivot on the right edge so wider badges stay flush with the icon
         transform-origin: right center;
@@ -32,59 +32,59 @@
     }
 
     // Smaller icons, centred in the bar (the bar is rotated, so X moves them up)
-    .tree_ef3116 .listItem__650eb,
-    .folderGroup__48112 {
+    .tree_5dqHTG .listItem_rwEpIL,
+    .folderGroup_RTMSuZ {
         zoom: 0.65;
         translate: 11px 0;
     }
 
     // Unread / selected pill sits on the bottom edge of the bar
-    .wrapper__58105.overlay__58105 {
+    .wrapper__o8_Xq.overlay__o8_Xq {
         translate: -8.5px 0;
     }
 
     // Servers in a folder are already scaled with the folder
-    .folderGroup__48112 .listItem__650eb {
+    .folderGroup_RTMSuZ .listItem_rwEpIL {
         zoom: 1;
         translate: none;
     }
 
-    .tree_ef3116 .listItem__650eb:has(.guildSeparator__252b6) {
+    .tree_5dqHTG .listItem_rwEpIL:has(.guildSeparator_3WHVfy) {
         zoom: 1;
         translate: none;
     }
 
     // Round icons
-    .wrapper_cc5dd2 foreignObject {
+    .wrapper_hqZPsU foreignObject {
         mask: none;
         clip-path: circle(50%);
     }
 
     // Folders keep their rounded square
-    .folderButton__48112 .wrapper_cc5dd2 foreignObject {
+    .folderButton_RTMSuZ .wrapper_hqZPsU foreignObject {
         clip-path: none;
     }
 
-    .folderHeader__48112 {
+    .folderHeader_RTMSuZ {
         zoom: calc(40 / 48);
     }
 
-    .folderHeader__48112 .lowerBadge_cc5dd2 {
+    .folderHeader_RTMSuZ .lowerBadge_hqZPsU {
         zoom: calc(1.6 * 48 / 40);
     }
 
     // Separator after start button (the bar is rotated, so height is its width)
-    .guildSeparator__252b6 {
+    .guildSeparator_3WHVfy {
         width: 25px;
         height: 2px;
         background: hsla(216, 7%, 33%, 0.48);
     }
 
-    .scroller_ef3116 {
+    .scroller_5dqHTG {
         @include box.barGradient(true, $color-window-1, $color-window-2);
 
         // DMs icon / Start button
-        .tutorialContainer__1f388 {
+        .tutorialContainer_1IyMuq {
             @include box.barGradient(true, $color-start-1, $color-start-2);
             // Pinned to the left end while the server icons scroll under it
             position: sticky;
@@ -95,30 +95,30 @@
             // Discord logo
             padding: 6px 0 29px 0;
 
-            .listItem__650eb {
+            .listItem_rwEpIL {
                 translate: 14px 0;
             }
 
-            .lowerBadge_cc5dd2 {
+            .lowerBadge_hqZPsU {
                 translate: -18.5px 6.9px;
             }
             border-radius: 0 0 100% 100% / 0 0 12px 12px;
 
-            .wrapper_cc5dd2 {
-                .svg_cc5dd2 {
+            .wrapper_hqZPsU {
+                .svg_hqZPsU {
                     height: inherit;
                     width: inherit;
                 }
 
-                .wrapper__6e9f8 {
-                    &.selected__6e9f8,
+                .wrapper_JJ-hgR {
+                    &.selected_JJ-hgR,
                     &:hover {
-                        .childWrapper__6e9f8 {
+                        .childWrapper_JJ-hgR {
                             color: $white;
                         }
                     }
 
-                    .childWrapper__6e9f8 {
+                    .childWrapper_JJ-hgR {
                         color: $white-overlay;
                         background: transparent;
 
@@ -131,38 +131,38 @@
         }
 
         // Unread DMs
-        .stack_dbd263 {
+        .stack_TWWX0S {
             // Direct parent of unread DM container
-            div:has(> .listItem__650eb) {
+            div:has(> .listItem_rwEpIL) {
                 height: unset !important;
             }
         }
 
         // Unread pill
-        .item__58105 {
+        .item__o8_Xq {
             background: $white;
         }
 
         // Closed folder
-        .folderGroup__48112:not(.isExpanded__48112) .folderButtonInner__48112 {
+        .folderGroup_RTMSuZ:not(.isExpanded_RTMSuZ) .folderButtonInner_RTMSuZ {
             border-radius: 32%;
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
 
         // Open folder
-        .folderGroup__48112.isExpanded__48112 {
-            .folderButtonInner__48112 {
+        .folderGroup_RTMSuZ.isExpanded_RTMSuZ {
+            .folderButtonInner_RTMSuZ {
                 background: transparent;
             }
 
             // Unread dots hang below the pill
-            .folderGuildsList__48112 {
+            .folderGuildsList_RTMSuZ {
                 overflow: visible;
             }
         }
 
         // Open folder pill
-        .folderGroupBackground__48112 {
+        .folderGroupBackground_RTMSuZ {
             left: 2.5px;
             bottom: 4px;
             width: 40px;
@@ -172,37 +172,22 @@
 
         // Add server and discover servers
         // Favourite servers
-        .circleIconButton__5bc7e,
-        .childWrapperNoHoverBg__6e9f8 {
+        .circleIconButton_g8YUxD,
+        .childWrapperNoHoverBg_JJ-hgR {
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
             color: $white-overlay;
         }
     }
 }
 
-// Extra control panel height, used to keep windows above it
-#app-mount {
-    &:has(.panels__5e434 .wrapperVisible__0d616) {
-        --xp-tray-quest: 71px;
-    }
-
-    &:has(.panels__5e434 .container_e131a9) {
-        --xp-tray-rtc: 83px;
-    }
-
-    &:has(.panels__5e434 .panel__5dec7) {
-        --xp-tray-activity: 60px;
-    }
-}
-
 // Control panel
-.panels__5e434 {
+.panels_pog62O {
     width: $panel-width;
     height: auto;
     position: fixed;
     bottom: -1px;
     left: calc(100vw - $panel-width);
-    z-index: 2;
+    z-index: 1;
     --text-default: #{$white};
     --text-muted: #{$white-overlay};
     --text-subtle: #{$white-overlay};
@@ -215,48 +200,50 @@
         z-index: 3;
     }
 
-    &:has(.activityPanel__5e434, .container_e131a9, .wrapperVisible__0d616) {
-        border-radius: 8px 8px 0 0;
+    &:has(.activityPanel_pog62O, .container_9U6LUN, .wrapperVisible_jdr5pz, #vc-spotify-player) {
+        border-radius: 8px 8px 0 8px;
     }
 
     // Quest progress
-    .wrapper__0d616 {
+    .wrapper_jdr5pz {
         background: transparent;
         color: $white;
     }
 
     // Now playing game/activity
-    .panel__5dec7 {
+    .panel_8eCwJY {
+        padding: 8px;
         background: transparent;
         border-bottom: 0;
 
         // Game title and icon
-        .title_b6c092,
-        .badge_a629d4 {
+        .title_1hp6hz,
+        .badge_Yjv1d0 {
             color: $white;
         }
     }
 
-    .subtext__339d0 {
+    .subtext_yc3axZ {
         color: $white-overlay;
     }
 
     // Voice chat controls
-    .container_e131a9 {
+    .container_9U6LUN {
+        // Room around the panel
+        padding: 8px;
         background: inherit;
         border-bottom: 0;
 
         // Room for the call timer line
-        .connection_e131a9 {
+        .connection_9U6LUN {
             height: auto;
-            padding-top: 6px;
         }
 
         // Video stream buttons
-        .button_e131a9 {
+        .button_9U6LUN {
             @include bt.button($ISBEIGE: true);
 
-            &.buttonActive_e131a9 {
+            &.buttonActive_9U6LUN {
                 background: $color-tooltip-2;
                 @include shd.boxShadow($ISINSET: true);
             }
@@ -264,7 +251,7 @@
     }
 
     // User and settings
-    .container__37e49 {
+    .container_g6VwXp {
         height: var(--custom-guild-list-width);
         padding-block: 0;
         // Keep the buttons off the tray's left edge
@@ -273,7 +260,7 @@
         background: transparent;
 
         // Self info
-        .accountPopoutButtonWrapper__37e49 {
+        .accountPopoutButtonWrapper_g6VwXp {
             margin: 0 0 0 6px;
             // Hover box with room around the name, centred in the bar
             height: 38px;
@@ -282,10 +269,10 @@
             flex-direction: row-reverse;
 
             // Username
-            .nameTag__37e49 {
+            .nameTag_g6VwXp {
                 text-shadow: 0 1px 1px $black;
 
-                .title_b6c092 {
+                .title_1hp6hz {
                     color: $white;
                     font-weight: normal;
                 }
@@ -294,18 +281,18 @@
     }
 
     // Buttons
-    .button__67645 {
+    .button_Y-8oZW {
         color: $white-overlay;
         --interactive-normal: #{$white-overlay};
         --interactive-text-default: #{$white-overlay};
     }
 
-    .accountPopoutButtonWrapper__37e49:hover,
-    .button__67645.enabled__67645:hover {
+    .accountPopoutButtonWrapper_g6VwXp:hover,
+    .button_Y-8oZW.enabled_Y-8oZW:hover {
         background: linear-gradient(to bottom, $color-taskbar-3, $color-taskbar-1);
     }
 
-    .button__67645.enabled__67645:hover {
+    .button_Y-8oZW.enabled_Y-8oZW:hover {
         color: $white;
         --interactive-normal: #{$white};
         --interactive-text-default: #{$white};

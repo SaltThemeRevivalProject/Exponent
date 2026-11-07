@@ -2,8 +2,8 @@
 @use "../top/color-generic" as *;
 
 // Tooltips
-.tooltip_c36707,
-.tooltip_fa450d {
+.tooltip_3_v8qp,
+.tooltip_ZDdyhE {
     --background-floating: #{$color-tooltip-2};
     --background-surface-higher: #{$color-tooltip-2};
     --background-surface-high: #{$color-tooltip-2};
@@ -15,11 +15,11 @@
     border: 1px solid $black;
     border-radius: 0;
 
-    .guildNameText_b1f768 {
+    .guildNameText__-eZlF {
         color: inherit;
     }
 
-    .tooltipPointer_c36707 {
+    .tooltipPointer_3_v8qp {
         --background-floating: #{$black};
         --background-surface-higher: #{$black};
     }

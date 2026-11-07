@@ -6,9 +6,9 @@
 // Modals
 // BSOD
 .backdrop_bc663c,
-.scrim__40128:has(+ .layer_bc663c .container__8a031:not(.modal_e44912)),
-.scrim__40128.lightbox__40128,
-.scrim__40128:has(+ .layer_bc663c > .focusLock__49fc1) {
+.scrim_od1dl1:has(+ .layer_C_WHpX .container_dvN-MP:not(.modal__F9ieB)),
+.scrim_od1dl1.lightbox_od1dl1,
+.scrim_od1dl1:has(+ .layer_C_WHpX > .focusLock__KoJTP) {
     background: var(--bsod-color, $bsod-color) !important;
 
     &::before {
@@ -27,7 +27,7 @@
 }
 
 // The profile editor is an XP window, not a blue screen box
-.scrim__40128:has(+ .layer_bc663c .profileContentOuter__9c3be) {
+.scrim_od1dl1:has(+ .layer_C_WHpX .profileContentOuter_s3DB6Y) {
     background: rgb(0 0 0 / 0.7) !important;
 
     &::before {
@@ -36,23 +36,23 @@
 }
 
 // Modal item
-.layer_bc663c {
+.layer_C_WHpX {
     align-items: flex-end;
     padding-right: 10vw;
 
     // Modals that fill the layer get the same right-side placement
-    &:has(.outerContainer__8a031) {
+    &:has(.outerContainer_dvN-MP) {
         align-items: stretch;
         padding-right: 0;
     }
 
-    .outerContainer__8a031 {
+    .outerContainer_dvN-MP {
         justify-content: flex-end;
         padding-right: 10vw;
     }
 
-    .focusLock__49fc1:not(:has(.carouselModal_d3a6f0)),
-    .container__8a031:not(.modal_e44912) {
+    .focusLock__KoJTP:not(:has(.carouselModal_7QK1F9)),
+    .container_dvN-MP:not(.modal__F9ieB) {
         border: 2px solid $white;
         border-radius: 0;
         padding: 5px;
@@ -61,7 +61,7 @@
 
     // Image viewer, one blue screen box on the right like the other dialogs:
     // author bar on top, as wide as the picture
-    .carouselModal_d3a6f0 {
+    .carouselModal_7QK1F9 {
         position: fixed;
         inset: 0;
         width: auto;
@@ -82,7 +82,7 @@
             grid-area: auto;
         }
 
-        .topBar__6088c {
+        .topBar_QGyCSa {
             position: relative;
             border: 2px solid $white;
             border-bottom: 0;
@@ -90,15 +90,15 @@
             background: var(--bsod-color, $bsod-color);
         }
 
-        .mediaArea_e03578 {
+        .mediaArea_RtjmOP {
             border: 2px solid $white;
             padding: 5px;
             background: var(--bsod-color, $bsod-color);
         }
 
         // Tools as plain white icons on the bar
-        .actionButtons_cc1819,
-        .closeButton__6088c {
+        .actionButtons_Q2cxvN,
+        .closeButton_QGyCSa {
             position: static;
             margin-left: auto;
             background: transparent;
@@ -116,17 +116,17 @@
             }
         }
 
-        .closeButton__6088c {
+        .closeButton_QGyCSa {
             margin-left: 0;
 
-            .buttonInner_aec7ab {
+            .buttonInner_zpnerZ {
                 border: 0;
             }
         }
     }
 
     // Profile editor, an XP window in the same spot as the settings window
-    .focusLock__49fc1:has(.profileContentOuter__9c3be) {
+    .focusLock__KoJTP:has(.profileContentOuter_s3DB6Y) {
         position: fixed;
         top: $window-top;
         left: $window-left;
@@ -139,7 +139,7 @@
     }
 
     // Above the pseudo title so the close button shows on it
-    .root_b92f52:has(.layoutContainer__9c3be) {
+    .root_ZhNJfE:has(.layoutContainer_s3DB6Y) {
         position: absolute;
         z-index: 2;
         inset: 0;
@@ -152,13 +152,13 @@
         border-radius: 0;
     }
 
-    div:has(> .layoutContainer__9c3be) {
+    div:has(> .layoutContainer_s3DB6Y) {
         flex: 1;
         height: auto;
     }
 
     // Unsaved changes bar floats over the bottom instead of taking space
-    .pendingChangesToolbar__9c3be {
+    .pendingChangesToolbar_s3DB6Y {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -166,7 +166,7 @@
         margin: 0;
     }
 
-    .layoutContainer__9c3be {
+    .layoutContainer_s3DB6Y {
         width: 100%;
         height: 100%;
         max-width: none;
@@ -176,33 +176,33 @@
 
         // Close button, red title bar button where the main window close sits
         // (fixed resolves against the transformed window root)
-        .modalHeaderButtons_b92f52 {
+        .modalHeaderButtons_ZhNJfE {
             position: fixed;
             top: -$title-height;
             right: 0;
             z-index: 2;
 
-            .button_a22cb0 {
+            .button_F7qvhY {
                 @include bt.winButton(20px, true);
                 padding: 0;
             }
         }
 
         // Header buttons wrapper Discord puts first, it would add a strip at the bottom
-        > :first-child:not(.editingPanel__9c3be, .profileContentOuter__9c3be) {
+        > :first-child:not(.editingPanel_s3DB6Y, .profileContentOuter_s3DB6Y) {
             position: absolute;
         }
     }
 
     // Editing panel on the left, full height of the window
-    .editingPanel__9c3be {
+    .editingPanel_s3DB6Y {
         height: auto;
         max-height: none;
         align-self: stretch;
         border-radius: 0;
     }
 
-    .profileContentOuter__9c3be {
+    .profileContentOuter_s3DB6Y {
         flex: 1;
         width: auto;
         height: auto;

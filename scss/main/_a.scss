@@ -4,21 +4,21 @@
 @use "../top/shortcutIcon" as ico;
 
 // Overall background
-.bg__960e4 {
+.bg_Fd0FEH {
     background: var(--xp-background-color, $xp-background-color) var(--xp-background-image, $xp-background-image) center/cover;
 }
 
 // Transparency
-:is(.appMount__51fd7, body, .app__160d8) {
+:is(.appMount_gEkNtR, body, .app_QbT-Jy) {
     background: transparent;
 }
 
 // Main view
-.container__5e434 {
+.container_pog62O {
     // Channels sidebar and main chat
-    .base__5e434 {
+    .base_pog62O {
         // Notice banner
-        .notice__6e2b9 {
+        .notice_Q02kKo {
             top: $window-top;
             margin: 0 $window-right 0 $window-left;
             width: auto;
@@ -29,24 +29,24 @@
         }
 
         // Call banner (in DMs)
-        .wrapper_cb9592 {
+        .wrapper_hbKzX7 {
             z-index: 0;
         }
 
-        .content_f75fb0::before {
+        .content_z_gUBg::before {
             z-index: 0;
         }
 
         // Top bar
-        .chat_f75fb0 > .subtitleContainer_f75fb0 > .title_f75fb0 {
-            .toolbar__9293f {
+        .chat_z_gUBg > .subtitleContainer_z_gUBg > .title_z_gUBg {
+            .toolbar_ybUK7Z {
                 // Move show/hide member list button
-                .iconWrapper__9293f:has([d^="M14.5 8a3 3"]) {
-                    @include ico.makeIcon(auto, 50px, ".icon__9293f");
+                .iconWrapper_ybUK7Z:has([d^="M14.5 8a3 3"]) {
+                    @include ico.makeIcon(auto, 50px, ".icon_ybUK7Z");
                     top: $window-top;
                     width: auto;
 
-                    .icon__9293f {
+                    .icon_ybUK7Z {
                         box-sizing: border-box;
                         margin: 0;
                     }
@@ -55,40 +55,40 @@
         }
 
         // Main DM and friend list view
-        .container__133bf,
+        .container_zrUwGA,
         // Explore servers view
-        .container_a592e1,
+        .container_I4BhVZ,
         // Buy nitro page
-        .applicationStore_f07d62,
+        .applicationStore_6U3jXZ,
         // Shop page
-        .shop__6db1d,
+        .shop_Mqg79R,
         // Quests page
-        .container__955a3,
+        .container_ZTJWQo,
         // Server boosts page
-        .container__89463,
+        .container_rhYbEd,
         // Main chat
-        .chat_f75fb0:not(.container__0b563 > .chat_f75fb0) {
+        .chat_z_gUBg:not(.container_xTP3zy > .chat_z_gUBg) {
             @include box.mainWindow;
         }
 
-        .shop__6db1d,
-        .container__955a3,
-        .container__89463 {
+        .shop_Mqg79R,
+        .container_ZTJWQo,
+        .container_rhYbEd {
             height: auto;
         }
 
         // Main chat and top bar
-        .chat_f75fb0:not(.container__0b563 > .chat_f75fb0) {
+        .chat_z_gUBg:not(.container_xTP3zy > .chat_z_gUBg) {
             // Main chat
-            .chatContent_f75fb0 {
+            .chatContent_z_gUBg {
                 // Message box
-                .form_f75fb0 {
+                .form_z_gUBg {
                     // Gift nitro button
-                    .buttons__74017 > .container__5287f > .button__74017 {
-                        @include ico.makeIcon(50px, auto, ".buttonWrapper__24af7");
+                    .buttons_2x8-Qn > .container_ejC3ZL > .button_2x8-Qn {
+                        @include ico.makeIcon(50px, auto, ".buttonWrapper_hfM7yP");
                         top: $window-top;
 
-                        .buttonWrapper__24af7 {
+                        .buttonWrapper_hfM7yP {
                             padding: 0;
                             margin: 0;
                             display: flex;
@@ -98,26 +98,27 @@
                     }
 
                     // Autocompleter
-                    .autocomplete__13533 {
+                    .autocomplete_CAMiwx {
                         width: calc(100% - 150px);
                     }
                 }
             }
 
             // Forums
-            .headerRow_f369db,
-            .list_f369db > div:first-child {
+            .headerRow_BkGrJJ,
+            .list_BkGrJJ > div:first-child {
                 min-width: 0;
             }
-            .header_f369db {
+            .header_BkGrJJ {
                 z-index: 0;
             }
 
             // Members list
-            .membersWrap_c8ffbb {
+            .membersWrap_86es0b {
                 @include box.startMenuList;
 
                 position: fixed;
+                z-index: 1;
                 right: 30px;
                 top: 180px;
                 // Fixed width, matches the channel list window
@@ -127,35 +128,35 @@
                 max-height: calc(100vh - 400px);
                 @include box.windowHasPseudoTitle("Members");
 
-                .members_c8ffbb {
+                .members_86es0b {
                     background: var(--xp-bg-color);
                     width: 100%;
 
                     // Member group
-                    .membersGroup_c8ffbb:not(:nth-child(2)) {
+                    .membersGroup_86es0b:not(:nth-child(2)) {
                         position: relative;
                         @include box.startMenuDivider(7px);
                     }
 
                     // Member group name
-                    .membersGroup_c8ffbb {
+                    .membersGroup_86es0b {
                         text-transform: uppercase;
                         font-weight: 700;
                         font-size: 12px;
                     }
 
                     // Member
-                    .member_c8ffbb,
-                    .member__5d473 {
+                    .member_86es0b,
+                    .member_Iy0c7A {
                         background: var(--xp-bg-color);
 
-                        .container__91a9d,
-                        .layout__91a9d {
+                        .container_J1Adu_,
+                        .layout_J1Adu_ {
                             border-radius: 0;
                         }
 
                         // Selected: white name on the blue highlight, whatever the role colour
-                        &.selected__91a9d .name__703b9 {
+                        &.selected_J1Adu_ .name_Wo4EpK {
                             color: $white !important;
                             -webkit-text-fill-color: $white;
                             background: none;
@@ -165,28 +166,28 @@
             }
 
             // VC video
-            .video_cb9592 {
+            .video_hbKzX7 {
                 z-index: 0;
             }
         }
 
         // VC video controls, with members list visible
-        &:has(.membersWrap_c8ffbb) .bottomControls_bfe55a {
+        &:has(.membersWrap_86es0b) .bottomControls_rTsZa_ {
             width: auto;
             padding-right: 150px;
         }
 
         // Messages clear the members window, gap set once on the chat area
-        .chatContent_f75fb0:has(+ .container_c8ffbb) {
+        .chatContent_z_gUBg:has(+ .container_86es0b) {
             --xp-members-message-gap: 140px;
             --xp-members-actions-gap: 130px;
         }
 
-        .message__5126c {
+        .message_SY_P2T {
             padding-right: var(--xp-members-message-gap, var(--space-xl)) !important;
 
             // Message actions
-            .container__040f0 {
+            .container_V_VY9Q {
                 right: var(--xp-members-actions-gap, 0px);
             }
         }

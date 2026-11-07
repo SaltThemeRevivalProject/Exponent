@@ -2,7 +2,7 @@
 @use "../../top/buttons" as bt;
 
 // Small menus
-.menu_c1e9c4 {
+.menu_M3qk4j {
     --interactive-normal: var(--xp-txt-color);
     --interactive-text-default: var(--xp-txt-color);
     background: var(--xp-bg-tint-color);
@@ -10,31 +10,31 @@
     border-radius: 0;
 
     // Menu item
-    .colorDefault_c1e9c4 {
+    .colorDefault_M3qk4j {
         // Focused menu item
-        &.focused_c1e9c4 {
+        &.focused_M3qk4j {
             background: $color-selected;
             border-radius: 0;
         }
 
-        .icon_c1e9c4 {
+        .icon_M3qk4j {
             // Radio button
             path[d^="M12 20C16.4183"] {
                 d: path("M 12 22 A 1 1 0 0 0 12 2 A 1 1 0 0 0 12 22 Z M 12 21 A 1 1 0 0 0 12 3 A 1 1 0 0 0 12 21 Z");
             }
 
             // circle
-            .radioSelection_c1e9c4 {
+            .radioSelection_M3qk4j {
                 color: $color-start-2;
             }
 
             // Checkbox
-            .checkbox_c1e9c4 {
+            .checkbox_M3qk4j {
                 d: path("M 2 2 V 22 H 22 V 2 Z M 3 3 V 21 H 21 V 3 Z");
                 color: var(--xp-txt-color);
             }
 
-            .check_c1e9c4 {
+            .check_M3qk4j {
                 color: $color-start-2;
             }
         }
@@ -42,21 +42,21 @@
 }
 
 // Slider
-.mini_ec237e {
+.mini_p3RiOL {
     // Slider bar
-    .bar_ec237e {
+    .bar_p3RiOL {
         @include bt.button($ISBEIGE: true);
         top: 9px;
         height: 6px;
         border: none;
 
-        .barFill_ec237e {
+        .barFill_p3RiOL {
             background: transparent;
         }
     }
 
     // Handle
-    .grabber_ec237e {
+    .grabber_p3RiOL {
         @include bt.button($ISBEIGE: true, $ISINSET: true);
         // Centred on the bar, Discord puts its top at the bar middle
         height: 22px;
