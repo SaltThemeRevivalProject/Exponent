@@ -157,8 +157,8 @@ This theme is distributed in the hope that it will be useful, but WITHOUT ANY WA
 
 ## Credits
 ### Themes
-[hsl]:  https://github.com/DiscordStyles/HorizontalServerList
-- [HorizontalServerList][hsl] by [DiscordStyles](https://github.com/DiscordStyles) ([Gibbu](https://github.com/Gibbu)) - MIT license
+[hsl]:  https://github.com/SaltThemeRevivalProject/HorizontalServerList
+- [HorizontalServerList][hsl] by [DiscordStyles](https://github.com/DiscordStyles), using [SaltThemeRevivalProject](https://github.com/SaltThemeRevivalProject) fork. ([Gibbu](https://github.com/Gibbu)) - MIT license
 
 ### Assets
 [bliss]:    https://archive.org/details/windows-xp-bliss-wallpaper
