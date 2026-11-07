@@ -4,12 +4,12 @@
 @use "../../../top/buttons" as bt;
 
 // Inbox
-.container__8cb2e {
+.container_uTMZTY {
     @include box.windowBox($VERTICAL-OFFSET: 3px);
     border-radius: 8px 8px 0 0;
 
     // Top bar
-    .header__06f80 {
+    .header_LSviKk {
         height: auto;
         padding: 0;
         background: var(--xp-bg-tint-color);
@@ -18,47 +18,47 @@
         --interactive-active: var(--xp-txt-color);
         --interactive-text-active: var(--xp-txt-color);
 
-        .headerTitle__06f80 {
+        .headerTitle_LSviKk {
             @include box.windowTitle;
             @include box.titleOverFrame;
             padding: 0 4px 0 9px;
             --interactive-normal: #{$white};
             color: $white;
 
-            .inboxIcon__06f80 {
+            .inboxIcon_LSviKk {
                 width: 20px;
                 height: 20px;
                 color: $white;
             }
 
             // Title
-            .inboxTitle__06f80 {
+            .inboxTitle_LSviKk {
                 font:
                     600 14px Tahoma,
                     sans-serif;
             }
 
             // Title bar buttons fit inside the bar
-            .controls__06f80 {
+            .controls_LSviKk {
                 height: $title-height;
                 align-items: center;
             }
         }
 
         // Tab row inside the window, right under the title bar
-        .headerTabs__06f80 {
+        .headerTabs_LSviKk {
             margin: 0;
         }
 
         // Mentions / unreads tabs
-        .tabBar__06f80 {
+        .tabBar_LSviKk {
             width: auto;
             margin: 0;
             padding: 4px 4px 0;
             border-bottom: 1px solid $color-taskbar-3;
             align-items: end;
 
-            .tab__06f80 {
+            .tab_LSviKk {
                 background: var(--xp-bg-tint-color);
                 border-radius: 3px 3px 0 0;
                 border: solid $color-taskbar-3;
@@ -71,7 +71,7 @@
                 justify-content: center;
 
                 // Selected tab
-                &.selected_aa8da2 {
+                &.selected_6zZYhF {
                     padding-top: 1px;
                     height: 26px;
                     color: $black;
@@ -87,12 +87,12 @@
     }
 
     // Mark all as read button
-    .controls__06f80 .button_a22cb0 {
+    .controls_LSviKk .button_F7qvhY {
         @include bt.winButton(22px, false);
     }
 
     // Friend requests count, a title bar button as wide as its icon and number
-    .controls__06f80 .friendRequestsButton_c7a32c {
+    .controls_LSviKk .friendRequestsButton_QwUPp6 {
         @include bt.winButton(22px, false);
         width: auto;
         padding: 0 4px;
@@ -102,7 +102,7 @@
     }
 
     // Content
-    .scroller__376cb {
+    .scroller_0JZW4Z {
         @include box.startMenuList;
         --header-primary: var(--xp-txt-color);
         --text-strong: var(--xp-txt-color);
@@ -111,20 +111,20 @@
         background: var(--xp-bg-tint-color);
 
         // Channel unread group
-        .box__376cb {
+        .box_0JZW4Z {
             // Channel group header
-            .channelHeader__5d903 {
+            .channelHeader_8ZcKCk {
                 background: var(--xp-bg-tint-color);
 
                 // Buttons
-                .button_a22cb0 {
+                .button_F7qvhY {
                     @include bt.button;
                 }
             }
 
             // Message group
-            .messages_d06995,
-            .singleMessage__376cb {
+            .messages_gtuI7R,
+            .singleMessage_0JZW4Z {
                 @include box.indentBox;
             }
         }

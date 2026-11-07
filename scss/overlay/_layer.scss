@@ -4,25 +4,25 @@
 @use "../top/buttons" as bt;
 @use "../top/shortcutIcon" as ico;
 
-.baseLayer__960e4.stop-animations {
+.baseLayer_Fd0FEH.stop-animations {
     opacity: 1 !important;
     transform: scale(1) !important;
 
-    .container__5e434 {
+    .container_pog62O {
         filter: grayscale(0.8) brightness(0.5);
         backdrop-filter: brightness(1);
     }
 }
 
-.layers__960e4 > .layer__960e4 .animating__960e4 {
+.layers_Fd0FEH > .layer_Fd0FEH .animating_Fd0FEH {
     transform: none !important;
 }
 
-.layer__960e4 {
+.layer_Fd0FEH {
     background: transparent;
 
     // Settings menu
-    .standardSidebarView__23e6b {
+    .standardSidebarView_jnk11m {
         @include box.mainWindow;
         // Clear the top bar and taskbar like the other windows
         margin-top: $window-top;
@@ -31,7 +31,7 @@
         @include box.windowHasPseudoTitle("Properties");
 
         // Settings sidebar as separate window on left side
-        .sidebarRegion__23e6b {
+        .sidebarRegion_jnk11m {
             @include box.startMenuList;
             position: fixed;
             left: 60px;
@@ -43,26 +43,26 @@
             flex: none;
             @include box.windowHasPseudoTitle("Settings");
 
-            .sidebarRegionScroller__23e6b {
+            .sidebarRegionScroller_jnk11m {
                 background: var(--xp-bg-color);
                 width: 100%;
 
-                .sidebar__23e6b {
+                .sidebar_jnk11m {
                     flex: 1;
                     width: auto;
                     padding: 8px;
                     padding-right: 0;
 
-                    .separator_aa8da2 {
+                    .separator_6zZYhF {
                         background: transparent;
                         position: relative;
                         @include box.startMenuDivider(-2px);
                     }
 
-                    .item_aa8da2 {
+                    .item_6zZYhF {
                         border-radius: 0;
 
-                        &.selected_aa8da2:not(.disabled_aa8da2) {
+                        &.selected_6zZYhF:not(.disabled_6zZYhF) {
                             background: var(--background-modifier-selected);
                             color: $white;
                         }
@@ -72,23 +72,23 @@
         }
 
         // Settings contents
-        :is(.contentRegionShownSidebar__23e6b, .contentRegion__23e6b) {
+        :is(.contentRegionShownSidebar_jnk11m, .contentRegion_jnk11m) {
             justify-content: center;
 
             // Server setting roles sidebar
-            .sidebar_e29cd7 {
+            .sidebar_7NrAL2 {
                 left: 0;
             }
 
             // Server setting roles main content
-            .customContainer__23e6b,
-            .contentContainer__91dc3 {
+            .customContainer_jnk11m,
+            .contentContainer_cKeB2a {
                 position: relative;
                 left: 0;
             }
 
             // Close settings button
-            .toolsContainer__23e6b {
+            .toolsContainer_jnk11m {
                 padding-top: 10px;
                 margin-right: 0;
                 // Level with the top row of desktop shortcuts, on every tab
@@ -97,8 +97,8 @@
                 left: $window-left - 78px;
                 height: 50px;
 
-                .container_c2b141 {
-                    @include ico.makeIcon(50px, auto, ".closeButton_c2b141");
+                .container_e76OBR {
+                    @include ico.makeIcon(50px, auto, ".closeButton_e76OBR");
                     position: relative;
                     left: 0;
                     width: 46px;
@@ -109,7 +109,7 @@
                         top: 46px;
                     }
 
-                    .keybind_c2b141 {
+                    .keybind_e76OBR {
                         display: none;
                     }
                 }
@@ -117,23 +117,23 @@
         }
     }
 
-    .pictureInPictureWindow__6341f {
+    .pictureInPictureWindow_69M0s9 {
         @include box.windowHasPseudoTitle("Stream");
         overflow: visible;
         border-radius: 0;
 
-        .pictureInPictureVideo_e4cb9a {
+        .pictureInPictureVideo_qOjco6 {
             border-radius: 0;
         }
     }
 }
 
 // User settings, opens as a modal
-.layer_bc663c:has(.container_abd9a8) {
+.layer_C_WHpX:has(.container_NdjzJd) {
     align-items: center;
     padding-right: 0;
 
-    .modal_e44912 {
+    .modal__F9ieB {
         position: fixed;
         top: calc($window-top - $title-height);
         left: $window-left;
@@ -149,18 +149,18 @@
     }
 
     // Let the sidebar escape the window
-    .container_abd9a8 {
+    .container_NdjzJd {
         contain: none;
     }
 
     // Rounded under the page title
-    .modalContentInner_e44912,
-    .content_e9e3ed {
+    .modalContentInner__F9ieB,
+    .content_3Rvb29 {
         border-radius: 8px 8px 0 0;
     }
 
     // Settings sidebar as separate window on left side
-    .sidebar__409aa {
+    .sidebar_cR4ic2 {
         @include box.startMenuList;
         position: fixed;
         // Same size and place as the server settings sidebar
@@ -177,14 +177,14 @@
         background: var(--xp-bg-color);
         @include box.windowHasPseudoTitle("Settings");
 
-        .navScroller__409aa {
+        .navScroller_cR4ic2 {
             background: var(--xp-bg-color);
         }
 
-        .item_caf372 {
+        .item_xyJHva {
             border-radius: 0;
 
-            &.active_caf372 {
+            &.active_xyJHva {
                 background: var(--background-modifier-selected);
                 color: $white;
             }
@@ -192,18 +192,18 @@
     }
 
     // Settings contents
-    .content_e9e3ed {
+    .content_3Rvb29 {
         position: absolute;
         inset: 0;
 
         // Page title
-        .contentHeader_e9e3ed {
+        .contentHeader_3Rvb29 {
             @include box.windowTitle;
             height: $title-height;
             min-height: $title-height;
             color: $white;
 
-            .button_a22cb0 {
+            .button_F7qvhY {
                 @include bt.winButton(20px, true);
             }
         }

@@ -4,15 +4,15 @@
 
 // User profile
 // Popout or in profile settings
-.outer_c0bea0 {
+.outer_P1YEjQ {
     border-radius: 0;
     overflow: visible;
 
-    &:not(.profileContentOuter__9c3be) {
+    &:not(.profileContentOuter_s3DB6Y) {
         @include box.windowHasPseudoTitle("User info", $OFFSET: -2px);
     }
 
-    &.profileContentOuter__9c3be {
+    &.profileContentOuter_s3DB6Y {
         border: 2px solid $color-taskbar-3;
     }
 
@@ -20,13 +20,13 @@
         padding: 0;
     }
 
-    .banner_f7e69e,
-    .banner__68edb {
+    .banner_vNEdYY,
+    .banner_s9bWOi {
         border-radius: 0;
     }
 
     // All profiles
-    .inner_c0bea0 {
+    .inner_P1YEjQ {
         border-radius: 0;
 
         // Tint (only visible with nitro)
@@ -37,19 +37,19 @@
         }
 
         // Banner buttons, eg. edit profile
-        .bannerButton_fb7f94 {
+        .bannerButton_C4gRrZ {
             @include bt.button;
             color: var(--xp-txt-color);
         }
 
         // Hypesquad etc badges
-        .container__8061a {
+        .container_IqWmhA {
             @include bt.button;
         }
 
         // Inner box
-        .overlay_c0bea0,
-        .body__5be3e {
+        .overlay_P1YEjQ,
+        .body_NOlkhE {
             border-radius: 0;
             --font-primary: Tahoma, sans-serif;
             --font-display: Tahoma, sans-serif;
@@ -57,30 +57,30 @@
             @include box.indentBox;
 
             // Roles
-            .rolePill__373b5,
-            .role_af3987 {
+            .rolePill_8JQJle,
+            .role_xL50-d {
                 @include bt.button;
             }
 
             // User note
-            .note_f37d39 {
+            .note_tbp_0j {
                 @include box.indentBox;
             }
         }
 
         // Sunken box inset from the edges, so its shadow frames it on every side
-        .body__5be3e {
+        .body_NOlkhE {
             margin: 0 8px 8px;
         }
 
         // Message user
-        .footer__5be3e .channelTextArea__74017 {
+        .footer_NOlkhE .channelTextArea_2x8-Qn {
             @include box.indentBox;
         }
     }
 
     // Unstyled profile
-    &:not(.custom-user-profile-theme) .inner_c0bea0 {
+    &:not(.custom-user-profile-theme) .inner_P1YEjQ {
         background: var(--xp-bg-tint-color);
         --interactive-active: var(--xp-txt-color);
         --interactive-text-active: var(--xp-txt-color);
@@ -95,13 +95,13 @@
         --interactive-muted: var(--xp-bg-tint-color);
 
         // Inner box
-        .overlay_c0bea0,
-        .body__5be3e {
+        .overlay_P1YEjQ,
+        .body_NOlkhE {
             background: var(--xp-bg-color);
         }
     }
 
-    .rolePill__373b5 .defaultColor__5345c {
+    .rolePill_8JQJle .defaultColor_HtJY5C {
         color: var(--xp-txt-color);
     }
 }

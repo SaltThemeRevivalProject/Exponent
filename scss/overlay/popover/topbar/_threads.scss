@@ -4,12 +4,12 @@
 @use "../../../top/buttons" as bt;
 
 // Threads
-.browser_d98031 {
+.browser_l-3BKx {
     @include box.windowBox($VERTICAL-OFFSET: 3px);
     border-radius: 8px 8px 0 0;
 
     // Top bar
-    .header_d9c882 {
+    .header_c0tu5x {
         @include box.windowTitle;
         @include box.titleOverFrame;
         min-height: $title-height;
@@ -17,7 +17,7 @@
         padding: 0 0 0 9px;
 
         // #
-        .threadIcon_d9c882 {
+        .threadIcon_c0tu5x {
             width: 20px;
             height: 20px;
             color: $white;
@@ -31,17 +31,17 @@
         }
 
         // Search bar
-        .container__5a838 {
+        .container_VhFsFg {
             @include bt.button($ISBEIGE: true, $ISINSET: true);
 
-            .control__5a838,
-            .wrapper__72c38 {
+            .control_VhFsFg,
+            .wrapper_UcGqzv {
                 height: 22px;
                 min-height: 0;
             }
 
             // The XP box is the only frame, also while typing
-            .wrapper__72c38 {
+            .wrapper_UcGqzv {
                 &,
                 &:focus-within {
                     border: 0;
@@ -52,12 +52,12 @@
             }
 
             // Magnifier at the right end, grey like the placeholder
-            .icon__75098 {
+            .icon_0PLWhS {
                 order: 1;
                 --icon-strong: grey;
             }
 
-            .input__75098 {
+            .input_0PLWhS {
                 height: 20px;
                 padding-left: 6px;
                 color: $black;
@@ -65,7 +65,7 @@
         }
 
         // Close button
-        .closeIcon_d9c882 {
+        .closeIcon_c0tu5x {
             @include bt.winButton(26px, true);
             display: flex;
             align-items: center;
@@ -73,7 +73,7 @@
         }
 
         // Create thread button
-        .createButton_d9c882 .button_a22cb0 {
+        .createButton_c0tu5x .button_F7qvhY {
             @include bt.button($ISBEIGE: true);
             height: 22px;
             min-height: 0;
@@ -96,14 +96,14 @@
     }
 
     // Content
-    .list_c441f0 {
+    .list_6_wQXw {
         @include box.startMenuList;
         // Holds the orange stripe at its top edge
         position: relative;
         background: var(--xp-bg-tint-color);
 
         // Thread age
-        .sectionHeader_c441f0 {
+        .sectionHeader_6_wQXw {
             color: var(--xp-txt-color) !important;
             font-size: 12px;
             font-weight: 700;
@@ -111,19 +111,19 @@
         }
 
         // Thread
-        .container__6764b {
+        .container_yRVHqK {
             @include box.indentBox;
             border: 0;
         }
 
         // No threads
-        .container__1b24f {
-            .defaultColor__5345c,
+        .container_0FCMV2 {
+            .defaultColor_HtJY5C,
             .text-md-normal__6e567 {
                 color: var(--xp-txt-color) !important;
             }
 
-            .button__201d5 {
+            .button_9OQtot {
                 @include bt.button;
             }
         }
