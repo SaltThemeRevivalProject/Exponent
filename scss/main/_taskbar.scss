@@ -43,6 +43,12 @@
         translate: -8.5px 0;
     }
 
+    // Servers in a folder are already scaled with the folder
+    .folderGroup_RTMSuZ .listItem_rwEpIL {
+        zoom: 1;
+        translate: none;
+    }
+
     .tree_5dqHTG .listItem_rwEpIL:has(.guildSeparator_3WHVfy) {
         zoom: 1;
         translate: none;
@@ -52,6 +58,19 @@
     .wrapper_hqZPsU foreignObject {
         mask: none;
         clip-path: circle(50%);
+    }
+
+    // Folders keep their rounded square
+    .folderButton_RTMSuZ .wrapper_hqZPsU foreignObject {
+        clip-path: none;
+    }
+
+    .folderHeader_RTMSuZ {
+        zoom: calc(40 / 48);
+    }
+
+    .folderHeader_RTMSuZ .lowerBadge_hqZPsU {
+        zoom: calc(1.6 * 48 / 40);
     }
 
     // Separator after start button (the bar is rotated, so height is its width)
@@ -111,19 +130,43 @@
             }
         }
 
+        // Unread DMs
+        .stack_TWWX0S {
+            // Direct parent of unread DM container
+            div:has(> .listItem_rwEpIL) {
+                height: unset !important;
+            }
+        }
+
         // Unread pill
         .item__o8_Xq {
             background: $white;
         }
 
-        // Folder
-        .folderButtonInner_RTMSuZ {
-            border-radius: 50%;
-            background: radial-gradient(circle at 12px 12px, $white, $color-taskbar-1, $color-taskbar-3);
+        // Closed folder
+        .folderGroup_RTMSuZ:not(.isExpanded_RTMSuZ) .folderButtonInner_RTMSuZ {
+            border-radius: 32%;
+            background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
 
         // Open folder
+        .folderGroup_RTMSuZ.isExpanded_RTMSuZ {
+            .folderButtonInner_RTMSuZ {
+                background: transparent;
+            }
+
+            // Unread dots hang below the pill
+            .folderGuildsList_RTMSuZ {
+                overflow: visible;
+            }
+        }
+
+        // Open folder pill
         .folderGroupBackground_RTMSuZ {
+            left: 2.5px;
+            bottom: 4px;
+            width: 40px;
+            border-radius: 20px;
             background: linear-gradient(to bottom, $color-taskbar-1, $color-taskbar-2);
         }
 
