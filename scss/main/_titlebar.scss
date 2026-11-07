@@ -5,12 +5,12 @@
 @use "../top/shortcutIcon" as ico;
 
 // Extra bar Discord shows over full screen layers, the window title bars carry the buttons
-.bar_c38106.fixed_c38106 {
+.bar_3zSH5d.fixed_3zSH5d {
     display: none;
 }
 
 // Titlebar
-.base__5e434 > .bar_c38106 {
+.base_pog62O > .bar_3zSH5d {
     position: absolute;
     left: $window-left;
     right: $window-right;
@@ -20,7 +20,7 @@
     @include box.windowTitle();
 
     // Window title, always "Discord"
-    .title_c38106 {
+    .title_3zSH5d {
         justify-content: flex-start;
         padding-left: 9px;
 
@@ -39,18 +39,18 @@
     }
 
     // Back / forward buttons
-    .leading_c38106 {
+    .leading_3zSH5d {
         display: none;
     }
 
-    .trailing_c38106 {
+    .trailing_3zSH5d {
         margin-left: auto;
         color: $white;
         --interactive-icon-default: #{$white-overlay};
         --interactive-icon-hover: #{$white};
 
         // Inbox / DevTools icons, white on the blue in both themes
-        .clickable__81391 {
+        .clickable_fErCLM {
             color: $white-overlay;
 
             &:hover {
@@ -59,7 +59,7 @@
         }
 
         // Move help icon
-        .anchor__14d82 > .clickable__81391 {
+        .anchor_R6ReNl > .clickable_fErCLM {
             @include ico.makeIcon(50px, auto, "svg");
             top: $window-top + 90px;
             width: auto;
@@ -72,14 +72,14 @@
     }
 
     // Min / Max / Close buttons
-    .winButtons_c38106::before {
+    .winButtons_3zSH5d::before {
         display: none;
     }
 
-    .winButton_c38106 {
+    .winButton_3zSH5d {
         @include bt.winButton(20px, false);
 
-        &.winButtonClose_c38106 {
+        &.winButtonClose_3zSH5d {
             @include bt.winButton(20px, true);
         }
     }

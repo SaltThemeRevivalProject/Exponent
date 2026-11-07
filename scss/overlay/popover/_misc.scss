@@ -4,16 +4,16 @@
 @use "../../top/buttons" as bt;
 
 // Stream preview
-.streamPreview__0489e {
+.streamPreview_1v6-1l {
     @include box.beigeBox;
 
-    .activityActions__0489e button {
+    .activityActions_1v6-1l button {
         @include bt.button;
     }
 }
 
 // Voice user activity ("Playing Now")
-.container_d7bc5d:has(.buttonsWrapper__65bb6) {
+.container_utcclU:has(.buttonsWrapper_nwnlPG) {
     @include box.beigeBox;
     --text-strong: #{$black};
     --text-muted: #{$black};
@@ -21,18 +21,18 @@
     --header-secondary: #{$black};
     color: $black;
 
-    .buttonsWrapper__65bb6 button {
+    .buttonsWrapper_nwnlPG button {
         @include bt.button($ISBEIGE: true);
         color: $black;
     }
 }
 
 // Emoji info
-.popoutContainer__0f481 {
+.popoutContainer_j9Vvzj {
     @include box.beigeBox;
 
     // Nitro button
-    .shinyButton__6a443 {
+    .shinyButton_yZrVKb {
         @include bt.button;
     }
 }

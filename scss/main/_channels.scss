@@ -3,7 +3,7 @@
 @use "../top/boxes" as box;
 
 // Channels sidebar
-.sidebar__5e434 {
+.sidebar_pog62O {
     position: absolute;
     bottom: var(--custom-guild-list-width);
     height: 60vh;
@@ -17,7 +17,7 @@
     --custom-app-panels-height: 0px;
 
     // Drag-to-resize edge, the window keeps its fixed width
-    .sidebarResizeHandle__5e434 {
+    .sidebarResizeHandle_pog62O {
         display: none;
     }
 
@@ -26,33 +26,33 @@
         display: none;
     }
 
-    .sidebarList__5e434 {
+    .sidebarList_pog62O {
         flex: 1;
         min-height: 0;
         width: 100%;
     }
 
     // Full width, so the window border lines up with the title bar and banner
-    .privateChannels_e6b769 > .scroller__99e7c,
-    .container__2637a > .scroller__629e4 {
+    .privateChannels_u88IQl > .scroller_Bce46W,
+    .container_H5ozaj > .scroller_ysO7Gy {
         margin-bottom: 0;
         margin-right: 0;
     }
 
     // Title and channels
-    .container__2637a {
+    .container_H5ozaj {
         background: transparent;
 
         // Title
-        .header_f37cb1 {
+        .header_XH4OpX {
             @include box.windowTitle();
             height: 48px;
             z-index: 3;
 
-            .headerContent_f37cb1 {
+            .headerContent_XH4OpX {
                 color: $white;
 
-                .flowerStar__3e3b0 {
+                .flowerStar_d3vyhc {
                     color: $white-overlay;
                 }
             }
@@ -60,14 +60,14 @@
 
         // Server image banner
         // Discord's glow around the banner, it spills outside the window
-        .headerEllipseBackdrop_f37cb1,
-        .headerEllipseForeground_f37cb1,
-        .headerGlass_f37cb1 {
+        .headerEllipseBackdrop_XH4OpX,
+        .headerEllipseForeground_XH4OpX,
+        .headerGlass_XH4OpX {
             display: none;
         }
 
         // Banner shows below the window title, which stays on top
-        .animatedContainer_f37cb1 {
+        .animatedContainer_XH4OpX {
             background: transparent;
             z-index: 2;
             border-radius: 0;
@@ -77,12 +77,12 @@
             inset-inline: 1px;
             width: auto;
 
-            .bannerImage_f37cb1::before {
+            .bannerImage_XH4OpX::before {
                 display: none;
             }
 
-            .bannerImage_f37cb1,
-            .bannerImg_f37cb1 {
+            .bannerImage_XH4OpX,
+            .bannerImg_XH4OpX {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -90,7 +90,7 @@
         }
 
         // Server event
-        .container__581dd {
+        .container_rLvdfN {
             background: $color-tooltip-2;
             --header-primary: #{$black};
             --text-strong: #{$black};
@@ -99,18 +99,18 @@
             @include box.windowBox(15px);
 
             // Inner box
-            .channelNotice_e2d7b8 {
+            .channelNotice_hVh8FI {
                 border-bottom: none;
 
                 // Event Details button
-                .joinButton_e2d7b8 {
+                .joinButton_hVh8FI {
                     border-radius: 0;
                 }
             }
         }
 
         // Channels
-        .scroller__629e4 {
+        .scroller_ysO7Gy {
             @include box.startMenuList;
 
             // No orange stripe under the server title
@@ -119,68 +119,68 @@
             }
 
             // Channel names
-            :is(.modeSelected__2ea32, .notInteractive__2ea32.modeConnected__2ea32, .notInteractive__2ea32.modeSelected__2ea32) {
-                .name__2ea32 {
+            :is(.modeSelected_TNyK-N, .notInteractive_TNyK-N.modeConnected_TNyK-N, .notInteractive_TNyK-N.modeSelected_TNyK-N) {
+                .name_TNyK-N {
                     color: $white;
                 }
             }
 
             // Divider
-            .sectionDivider__629e4 {
+            .sectionDivider_ysO7Gy {
                 background: transparent;
             }
 
             // Category
-            .containerDefault__29444:not(:nth-child(2)) {
+            .containerDefault_yOdhm_:not(:nth-child(2)) {
                 @include box.startMenuDivider(7px);
             }
 
             // Category name
-            .name__29444 {
+            .name_yOdhm_ {
                 text-transform: uppercase;
                 font-weight: 700;
                 font-size: 12px;
             }
 
             // Channel
-            :is(.wrapper__2ea32, .container_e45859, .link__2ea32) {
+            :is(.wrapper_TNyK-N, .container_NKPmfZ, .link_TNyK-N) {
                 border-radius: 0;
 
                 // Channel actions
-                .actionIcon_c69b6d {
+                .actionIcon_Wx6SnQ {
                     color: var(--xp-set-color);
                 }
 
                 // Voice channel member limit
-                .channelInfo_c69b6d {
+                .channelInfo_Wx6SnQ {
                     --background-primary: lightgrey;
                     --background-base-lower: lightgrey;
                     --background-tertiary: grey;
                     --background-base-lowest: grey;
 
-                    .wrapper__260e1 {
+                    .wrapper_QQRrAh {
                         border-radius: 3px;
                     }
                 }
             }
 
             // User in voice channel
-            .content__07f91 {
+            .content_YUoOxm {
                 border-radius: 0;
             }
 
             // Selected channel
-            .modeSelected__2ea32 {
+            .modeSelected_TNyK-N {
                 // Channel actions
-                .actionIcon_c69b6d {
+                .actionIcon_Wx6SnQ {
                     color: $white-overlay;
                 }
             }
 
             // Muted channel
-            .modeMuted__2ea32 {
-                .name__2ea32,
-                .icon__2ea32 {
+            .modeMuted_TNyK-N {
+                .name_TNyK-N,
+                .icon_TNyK-N {
                     color: grey;
                 }
             }
@@ -188,15 +188,15 @@
     }
 
     // DMs
-    .privateChannels_e6b769 {
+    .privateChannels_u88IQl {
         background: transparent;
 
         // Find conversation
-        .searchBar_e6b769 {
+        .searchBar_u88IQl {
             @include box.windowTitle;
 
             .searchBarComponent_e6b769,
-            .button_a22cb0 {
+            .button_F7qvhY {
                 background: transparent;
                 border: 0;
                 font-size: 14px;
@@ -206,7 +206,7 @@
                 text-shadow: 0 1px 1px $black;
                 color: $white;
 
-                .buttonChildrenWrapper_a22cb0 {
+                .buttonChildrenWrapper_F7qvhY {
                     justify-content: flex-start;
                     padding-inline: 0;
                 }
@@ -214,22 +214,22 @@
         }
 
         // DMs and friends
-        .scroller__99e7c {
+        .scroller_Bce46W {
             @include box.startMenuList;
 
             // Names in the start menu text colour, status lines stay muted
-            .interactive__972a0 {
+            .interactive_zln_tS {
                 color: var(--xp-txt-color);
             }
         }
 
         // Hide Discord's divider, the start menu divider shows instead
-        .sectionDivider_e6b769 {
+        .sectionDivider_u88IQl {
             visibility: hidden;
         }
 
         // DMs category
-        .privateChannelsHeaderContainer__99e7c {
+        .privateChannelsHeaderContainer_Bce46W {
             position: relative;
             text-transform: uppercase;
             font-weight: 700;
@@ -238,13 +238,13 @@
         }
 
         // Menu item
-        .container_e45859 {
+        .container_NKPmfZ {
             border-radius: 0;
         }
     }
 
     // Explore servers category list
-    .container__551b0 {
+    .container_GQJi50 {
         @include box.startMenuList;
         border-radius: 8px 8px 0 0;
 
@@ -254,18 +254,18 @@
         }
 
         // Header
-        .header__551b0 {
+        .header_GQJi50 {
             @include box.windowTitle;
             height: auto;
             padding: 12px 16px;
         }
 
         // Category
-        .navItem__551b0 {
+        .navItem_GQJi50 {
             color: var(--channels-default);
             border-radius: 0;
 
-            &.selected__551b0 {
+            &.selected_GQJi50 {
                 background-color: var(--background-modifier-selected);
             }
         }

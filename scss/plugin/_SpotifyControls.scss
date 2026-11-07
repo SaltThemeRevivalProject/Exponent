@@ -4,14 +4,14 @@
 
 // Vencord SpotifyControls
 #vc-spotify-player {
-    .appMount__51fd7 & {
+    .appMount_gEkNtR & {
         background: unset;
         border-bottom: 0;
     }
 
     // XP progress bar: beige track, green fill, no handle
     #vc-spotify-progress-bar {
-        .bar_ec237e {
+        .bar_p3RiOL {
             @include bt.button($ISBEIGE: true);
             top: 9px;
             height: 6px;
@@ -19,12 +19,12 @@
             overflow: hidden;
         }
 
-        .barFill_ec237e {
+        .barFill_p3RiOL {
             height: 100%;
             background: linear-gradient(to bottom, $white-overlay, transparent 60%), $color-start-2;
         }
 
-        .grabber_ec237e {
+        .grabber_p3RiOL {
             opacity: 0;
         }
     }
